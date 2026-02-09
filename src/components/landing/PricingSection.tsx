@@ -5,7 +5,7 @@ const tiers = [
   {
     name: "Blueprint Access",
     price: "$19.99",
-    period: "/PDF",
+    period: " - Guide will be Mailed",
     description: "Perfect for getting started with your bounce house business.",
     features: [
       "25-page Tropical Bounce Blueprint",
