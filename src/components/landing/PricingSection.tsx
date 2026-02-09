@@ -20,7 +20,7 @@ const tiers = [
   {
     name: "Pro Blueprint",
     price: "$39.99",
-    period: "/month",
+    period: "/PDF",
     description: "Everything you need to launch and scale like a pro.",
     features: [
       "Everything in Blueprint Access",
