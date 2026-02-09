@@ -5,7 +5,7 @@ const tiers = [
   {
     name: "Blueprint Access",
     price: "$19.99",
-    period: "/month",
+    period: "/PDF",
     description: "Perfect for getting started with your bounce house business.",
     features: [
       "25-page Tropical Bounce Blueprint",
@@ -20,7 +20,7 @@ const tiers = [
   {
     name: "Pro Blueprint",
     price: "$39.99",
-    period: "/month",
+    period: "/PDF",
     description: "Everything you need to launch and scale like a pro.",
     features: [
       "Everything in Blueprint Access",
