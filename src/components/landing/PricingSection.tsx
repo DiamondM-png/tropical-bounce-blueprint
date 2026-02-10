@@ -19,8 +19,8 @@ const tiers = [
   },
   {
     name: "Pro Blueprint",
-    price: "$39.99",
-    period: " - Guide will be Mailed",
+    price: "$49.99",
+    period: " - In-depth physical guide mailed via USPS",
     description: "Everything you need to launch and scale like a pro.",
     features: [
       "Everything in Blueprint Access",
