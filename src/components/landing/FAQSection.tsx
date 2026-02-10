@@ -11,20 +11,20 @@ const faqs = [
     a: "Our 25-page guide covers everything from market research and business registration to equipment sourcing, pricing strategies, marketing tactics, and scaling your bounce house rental business. It's designed specifically for aspiring side-hustle entrepreneurs.",
   },
   {
-    q: "Can I cancel my subscription anytime?",
-    a: "Absolutely! There are no long-term contracts. You can cancel your subscription at any time from your account dashboard, and you'll retain access until the end of your billing period.",
+    q: "How will I receive my guide?",
+    a: "Your guide will be mailed to you via USPS. The Blueprint Access ($19.99) is delivered as a PDF, and the Pro Blueprint ($49.99) is a more in-depth physical guide mailed directly to your door.",
   },
   {
     q: "What's the difference between Blueprint Access and Pro Blueprint?",
-    a: "Blueprint Access gives you the core guide, interactive checklists, and basic templates. Pro Blueprint adds advanced financial projections, a detailed marketing plan template, premium supplier contacts, guide annotations, and priority support.",
+    a: "Blueprint Access ($19.99) gives you the core 25-page PDF guide, interactive checklists, and basic templates. Pro Blueprint ($49.99) is a more in-depth physical guide mailed via USPS that includes advanced financial projections, a detailed marketing plan template, premium supplier contacts, and priority support.",
   },
   {
     q: "Do I need experience to start a bounce house business?",
     a: "Not at all! Our Blueprint is designed for complete beginners. We walk you through every step with clear instructions, checklists, and templates so you can launch confidently.",
   },
   {
-    q: "Can I download the templates and guide?",
-    a: "Yes! Pro Blueprint subscribers can download the full guide as a PDF and all business plan templates in Word-compatible format for offline use.",
+    q: "Can I download the templates?",
+    a: "Yes! Pro Blueprint customers receive downloadable business plan templates in Word-compatible format for offline use, along with their physical guide.",
   },
   {
     q: "How often is the resource library updated?",
