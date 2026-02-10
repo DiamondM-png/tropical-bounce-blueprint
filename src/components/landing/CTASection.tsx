@@ -14,7 +14,7 @@ const CTASection = () => {
             <div className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/10 px-4 py-2 mb-6">
               <Zap className="h-4 w-4 text-accent" />
               <span className="text-sm font-heading font-semibold text-primary-foreground">
-                Limited time — lock in your price today
+                Limited time — get your guide today
               </span>
             </div>
 

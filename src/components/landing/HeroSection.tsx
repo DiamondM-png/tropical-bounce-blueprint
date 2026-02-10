@@ -48,7 +48,7 @@ const HeroSection = () => {
           </div>
 
           <p className="mt-6 text-primary-foreground/60 text-sm font-body">
-            Starting at $19.99/month · Cancel anytime · Instant access
+            Starting at $19.99 · One-time purchase · Guides mailed via USPS
           </p>
         </div>
       </div>
