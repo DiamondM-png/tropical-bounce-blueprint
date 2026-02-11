@@ -48,7 +48,7 @@ const HeroSection = () => {
           </div>
 
           <p className="mt-6 text-primary-foreground/60 text-sm font-body">
-            Starting at $19.99 · One-time purchase · Guides mailed via USPS
+            PDF from $19.99 · Physical guide from $49.99 · Mailed via USPS
           </p>
         </div>
       </div>
