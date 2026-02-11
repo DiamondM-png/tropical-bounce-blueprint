@@ -4,7 +4,7 @@ import { Check, Crown } from "lucide-react";
 const tiers = [
   {
     name: "Blueprint Access",
-    price: "$19.99",
+    price: "$9.99",
     period: " PDF",
     description: "Perfect for getting started with your bounce house business.",
     features: [
