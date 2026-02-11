@@ -12,11 +12,11 @@ const faqs = [
   },
   {
     q: "How will I receive my guide?",
-    a: "Your guide will be mailed to you via USPS. The Blueprint Access ($19.99) is delivered as a PDF, and the Pro Blueprint ($49.99) is a more in-depth physical guide mailed directly to your door.",
+    a: "Your guide will be mailed to you via USPS. The Blueprint Access ($9.99) is delivered as a PDF, and the Pro Blueprint ($49.99) is a more in-depth physical guide mailed directly to your door.",
   },
   {
     q: "What's the difference between Blueprint Access and Pro Blueprint?",
-    a: "Blueprint Access ($19.99) gives you the core 25-page PDF guide, interactive checklists, and basic templates. Pro Blueprint ($49.99) is a more in-depth physical guide mailed via USPS that includes advanced financial projections, a detailed marketing plan template, premium supplier contacts, and priority support.",
+    a: "Blueprint Access ($9.99) gives you the core 25-page PDF guide, interactive checklists, and basic templates. Pro Blueprint ($49.99) is a more in-depth physical guide mailed via USPS that includes advanced financial projections, a detailed marketing plan template, premium supplier contacts, and priority support.",
   },
   {
     q: "Do I need experience to start a bounce house business?",
