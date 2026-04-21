@@ -16,7 +16,6 @@ import {
 } from "lucide-react";
 
 const coreContent = [
-  "Everything in Blueprint Access — expanded with deeper detail and case studies",
   "Introduction · Market Research · Business Registration · Insurance",
   "Equipment Sourcing · Pricing Strategies · Marketing Basics",
   "Operations · Getting Your First Customers",
@@ -134,13 +133,13 @@ const ProGuide = () => {
         <div className="container mx-auto max-w-4xl text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary-foreground/10 text-sm font-body mb-4">
             <Sparkles className="h-4 w-4" />
-            Pro Blueprint · Physical Guide Mailed via USPS
+            Pro Blueprint · Instant PDF Download
           </div>
           <h1 className="font-heading font-bold text-4xl md:text-5xl mb-4">
             The Pro Bounce Business Blueprint
           </h1>
           <p className="text-lg text-secondary-foreground/80 max-w-2xl mx-auto font-body">
-            Everything in Blueprint Access — plus advanced financials, premium supplier
+            The complete guide — core chapters plus advanced financials, premium supplier
             access, legal templates, and the systems you need to scale.
           </p>
         </div>
@@ -153,10 +152,10 @@ const ProGuide = () => {
             <CardHeader>
               <div className="flex items-center gap-3">
                 <BookOpen className="h-6 w-6 text-primary" />
-                <CardTitle className="font-heading">Includes Everything in Blueprint Access</CardTitle>
+                <CardTitle className="font-heading">Core Chapters Included</CardTitle>
               </div>
               <CardDescription>
-                The full $9.99 PDF guide is included as the foundation of the Pro edition.
+                The full foundational content covering everything you need to launch.
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -227,7 +226,7 @@ const ProGuide = () => {
             <h2 className="font-heading font-bold text-3xl">Pro Tips & Insider Annotations</h2>
           </div>
           <p className="text-muted-foreground mb-8 font-body">
-            A sample of the highlighted notes you'll find throughout the physical guide.
+            A sample of the highlighted notes you'll find throughout the guide.
           </p>
           <div className="grid md:grid-cols-2 gap-4">
             {proTips.map((tip, i) => (
@@ -248,10 +247,10 @@ const ProGuide = () => {
       <section className="py-16 px-4 bg-gradient-to-br from-secondary to-accent text-secondary-foreground">
         <div className="container mx-auto max-w-2xl text-center">
           <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4">
-            Get the Pro Blueprint mailed to your door
+            Get the Pro Blueprint instantly
           </h2>
           <p className="text-secondary-foreground/80 mb-8 font-body">
-            Premium physical guide delivered via USPS — $49.99, one-time.
+            Complete PDF guide — $49.99, one-time. All sales final.
           </p>
           <Button variant="ctaInverse" size="lg" asChild>
             <Link to="/#pricing">Order Pro Blueprint — $49.99</Link>
