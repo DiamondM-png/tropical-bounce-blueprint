@@ -7,24 +7,24 @@ import {
 
 const faqs = [
   {
-    q: "What's included in the Tropical Bounce Business Blueprint?",
-    a: "Our 25-page guide covers everything from market research and business registration to equipment sourcing, pricing strategies, marketing tactics, and scaling your bounce house rental business. It's designed specifically for aspiring side-hustle entrepreneurs.",
+    q: "What's included in the Pro Blueprint?",
+    a: "The Pro Blueprint is our complete in-depth guide covering everything from market research, business registration, insurance, equipment sourcing, and pricing strategies to advanced financial projections, a detailed marketing plan, premium supplier contacts, legal templates, scaling, and seasonal planning.",
   },
   {
     q: "How will I receive my guide?",
-    a: "Your guide will be mailed to you via USPS. The Blueprint Access ($9.99) is delivered as a PDF, and the Pro Blueprint ($49.99) is a more in-depth physical guide mailed directly to your door.",
+    a: "The Pro Blueprint is delivered as a downloadable PDF immediately after purchase. No shipping, no waiting — just instant access.",
   },
   {
-    q: "What's the difference between Blueprint Access and Pro Blueprint?",
-    a: "Blueprint Access ($9.99) gives you the core 25-page PDF guide, interactive checklists, and basic templates. Pro Blueprint ($49.99) is a more in-depth physical guide mailed via USPS that includes advanced financial projections, a detailed marketing plan template, premium supplier contacts, and priority support.",
+    q: "Do you offer refunds?",
+    a: "No. Because the Pro Blueprint is a digital product delivered instantly, all sales are final and we do not offer refunds. Please review what's included before purchasing.",
   },
   {
     q: "Do I need experience to start a bounce house business?",
-    a: "Not at all! Our Blueprint is designed for complete beginners. We walk you through every step with clear instructions, checklists, and templates so you can launch confidently.",
+    a: "Not at all! The Pro Blueprint is designed for complete beginners. We walk you through every step with clear instructions, checklists, and templates so you can launch confidently.",
   },
   {
     q: "Can I download the templates?",
-    a: "Yes! Pro Blueprint customers receive downloadable business plan templates in Word-compatible format for offline use, along with their physical guide.",
+    a: "Yes! The Pro Blueprint includes downloadable business plan, financial, marketing, and legal templates in editable formats for offline use.",
   },
   {
     q: "How often is the resource library updated?",
