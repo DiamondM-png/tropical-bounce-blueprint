@@ -48,7 +48,7 @@ const HeroSection = () => {
           </div>
 
           <p className="mt-6 text-primary-foreground/60 text-sm font-body">
-            PDF from $9.99 · Physical guide from $49.99 · Mailed via USPS
+            Pro Blueprint PDF · $49.99 · Instant download · All sales final
           </p>
         </div>
       </div>
