@@ -3,7 +3,7 @@ import { Check, Crown } from "lucide-react";
 
 const tier = {
   name: "Pro Blueprint",
-  price: "$49.99",
+  price: "$19.99",
   period: " PDF",
   description: "Everything you need to launch and scale like a pro — delivered as a downloadable PDF.",
   features: [
