@@ -26,29 +26,33 @@ const HeroSection = () => {
           </div>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-black text-primary-foreground leading-[1.1] mb-6">
-            Launch Your Dream{" "}
-            <span className="text-accent">Bounce House</span>{" "}
-            Business!
+            Build and Scale Your{" "}
+            <span className="text-accent">Inflatable Rental</span>{" "}
+            Enterprise
           </h1>
 
           <p className="text-lg md:text-xl text-primary-foreground/85 font-body leading-relaxed mb-8 max-w-xl">
-            Everything you need to start a profitable bounce house rental 
-            business — from our 25-page blueprint to interactive checklists, 
-            editable templates, and curated resources.
+            The automated platform and operational blueprint for serious rental operators.
+            Get the complete blueprint to launch a local asset business, or unlock our
+            cloud-based infrastructure to scale into $5,000 luxury estate contracts.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" variant="cta" className="text-lg px-8 py-6">
-              Get Started Now
+            <Button
+              size="lg"
+              variant="cta"
+              className="text-lg px-8 py-6"
+              onClick={() =>
+                document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              Choose Your Entry Path
               <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button size="lg" variant="hero" className="text-lg px-8 py-6">
-              See What's Included
             </Button>
           </div>
 
           <p className="mt-6 text-primary-foreground/60 text-sm font-body">
-            Pro Blueprint PDF · $19.99 · Instant download · All sales final
+            Two tiers · One-time blueprint or monthly platform · All sales final
           </p>
         </div>
       </div>
