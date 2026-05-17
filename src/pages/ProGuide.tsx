@@ -123,7 +123,7 @@ const ProGuide = () => {
             Back to home
           </Link>
           <Button variant="ctaInverse" size="sm" asChild>
-            <Link to="/#pricing">Get Pro Blueprint — $49.99</Link>
+            <Link to="/#pricing">Get Pro Blueprint — $19.99</Link>
           </Button>
         </div>
       </header>
@@ -250,10 +250,10 @@ const ProGuide = () => {
             Get the Pro Blueprint instantly
           </h2>
           <p className="text-secondary-foreground/80 mb-8 font-body">
-            Complete PDF guide — $49.99, one-time. All sales final.
+            Complete PDF guide — $19.99, one-time. All sales final.
           </p>
           <Button variant="ctaInverse" size="lg" asChild>
-            <Link to="/#pricing">Order Pro Blueprint — $49.99</Link>
+            <Link to="/#pricing">Order Pro Blueprint — $19.99</Link>
           </Button>
         </div>
       </section>
