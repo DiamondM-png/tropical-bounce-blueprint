@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Palmtree } from "lucide-react";
+import { Menu, X, Palmtree, Lock } from "lucide-react";
 
 const navLinks = [
   { label: "Features", href: "#features" },
