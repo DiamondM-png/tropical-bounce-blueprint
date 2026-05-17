@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Palmtree } from "lucide-react";
+import { Menu, X, Palmtree, Lock } from "lucide-react";
 
 const navLinks = [
   { label: "Features", href: "#features" },
@@ -33,6 +34,13 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
+          <Link
+            to="/upstream-hub"
+            className="group flex items-center gap-1.5 text-sm font-heading font-semibold bg-gradient-to-r from-amber-500 to-amber-600 bg-clip-text text-transparent hover:from-amber-400 hover:to-amber-500 transition-all"
+          >
+            <Lock className="h-3.5 w-3.5 text-amber-500 group-hover:text-amber-400" />
+            Upstream Hub
+          </Link>
           <Button variant="cta" size="sm">
             Get Started
           </Button>
@@ -57,6 +65,14 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
+          <Link
+            to="/upstream-hub"
+            onClick={() => setOpen(false)}
+            className="flex items-center gap-1.5 text-sm font-heading font-semibold text-amber-600"
+          >
+            <Lock className="h-3.5 w-3.5" />
+            Upstream Hub
+          </Link>
           <Button variant="cta" size="sm" className="w-full mt-2">
             Get Started
           </Button>
