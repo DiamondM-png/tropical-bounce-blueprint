@@ -5,7 +5,7 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-const PDF_PATH = 'pro-blueprint.pdf';
+const PDF_PATH = 'inflatable-enterprise-manual.pdf';
 
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') return new Response('ok', { headers: corsHeaders });
@@ -55,7 +55,7 @@ Deno.serve(async (req) => {
 
     // 1-hour signed URL
     const { data: signed, error: sErr } = await admin
-      .storage.from('guides').createSignedUrl(PDF_PATH, 3600, { download: 'pro-blueprint.pdf' });
+      .storage.from('guides').createSignedUrl(PDF_PATH, 3600, { download: 'inflatable-enterprise-manual.pdf' });
     if (sErr || !signed) throw sErr || new Error('Failed to sign URL');
 
     return new Response(JSON.stringify({ url: signed.signedUrl }), {
