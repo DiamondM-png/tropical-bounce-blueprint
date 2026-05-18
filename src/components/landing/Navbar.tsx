@@ -21,7 +21,7 @@ const Navbar = () => {
         <a href="#" className="flex items-center gap-2">
           <Palmtree className="h-7 w-7 text-primary" />
           <span className="font-heading font-extrabold text-xl text-foreground">
-            tropicalbounce<span className="text-secondary">.com</span>
+            Pro <span className="text-secondary">Blueprint</span>
           </span>
         </a>
 
