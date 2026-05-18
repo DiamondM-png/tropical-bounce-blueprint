@@ -7,24 +7,24 @@ import {
 
 const faqs = [
   {
-    q: "What's included in the Pro Blueprint?",
-    a: "The Pro Blueprint is our complete in-depth guide covering everything from market research, business registration, insurance, equipment sourcing, and pricing strategies to advanced financial projections, a detailed marketing plan, premium supplier contacts, legal templates, scaling, and seasonal planning.",
+    q: "What's included in the Inflatable Enterprise Manual?",
+    a: "The Inflatable Enterprise Manual is our complete in-depth guide covering everything from market research, business registration, insurance, equipment sourcing, and pricing strategies to advanced financial projections, a detailed marketing plan, premium supplier contacts, legal templates, scaling, and seasonal planning.",
   },
   {
     q: "How will I receive my guide?",
-    a: "The Pro Blueprint is delivered as a downloadable PDF immediately after purchase. No shipping, no waiting — just instant access.",
+    a: "The Inflatable Enterprise Manual is delivered as a downloadable PDF immediately after purchase. No shipping, no waiting — just instant access.",
   },
   {
     q: "Do you offer refunds?",
-    a: "No. Because the Pro Blueprint is a digital product delivered instantly, all sales are final and we do not offer refunds. Please review what's included before purchasing.",
+    a: "No. Because the Inflatable Enterprise Manual is a digital product delivered instantly, all sales are final and we do not offer refunds. Please review what's included before purchasing.",
   },
   {
     q: "Do I need experience to start a bounce house business?",
-    a: "Not at all! The Pro Blueprint is designed for complete beginners. We walk you through every step with clear instructions, checklists, and templates so you can launch confidently.",
+    a: "Not at all! The Inflatable Enterprise Manual is designed for complete beginners. We walk you through every step with clear instructions, checklists, and templates so you can launch confidently.",
   },
   {
     q: "Can I download the templates?",
-    a: "Yes! The Pro Blueprint includes downloadable business plan, financial, marketing, and legal templates in editable formats for offline use.",
+    a: "Yes! The Inflatable Enterprise Manual includes downloadable business plan, financial, marketing, and legal templates in editable formats for offline use.",
   },
   {
     q: "How often is the resource library updated?",

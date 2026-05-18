@@ -82,10 +82,10 @@ const CheckoutSuccess = () => {
           )}
           {status === "ready" && pdfUrl && (
             <>
-              <p className="text-sm text-muted-foreground">Your Pro Blueprint is ready.</p>
+              <p className="text-sm text-muted-foreground">Your Inflatable Enterprise Manual is ready.</p>
               <Button asChild size="lg" variant="cta" className="w-full">
                 <a href={pdfUrl} download>
-                  <Download className="h-4 w-4 mr-2" /> Download Pro Blueprint PDF
+                  <Download className="h-4 w-4 mr-2" /> Download Inflatable Enterprise Manual PDF
                 </a>
               </Button>
               <p className="text-xs text-muted-foreground">Link expires in 1 hour. Sign in any time to download again.</p>
