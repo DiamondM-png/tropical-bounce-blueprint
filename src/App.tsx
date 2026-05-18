@@ -8,6 +8,7 @@ import ProGuide from "./pages/ProGuide";
 import UpstreamHub from "./pages/UpstreamHub";
 import AuthPage from "./pages/Auth";
 import CheckoutSuccess from "./pages/CheckoutSuccess";
+import Checkout from "./pages/Checkout";
 import NotFound from "./pages/NotFound";
 import { AuthProvider } from "@/hooks/useAuth";
 import { PaymentTestModeBanner } from "@/components/PaymentTestModeBanner";
@@ -27,6 +28,7 @@ const App = () => (
             <Route path="/pro-guide" element={<ProGuide />} />
             <Route path="/upstream-hub" element={<UpstreamHub />} />
             <Route path="/auth" element={<AuthPage />} />
+            <Route path="/checkout" element={<Checkout />} />
             <Route path="/checkout/success" element={<CheckoutSuccess />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
