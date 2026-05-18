@@ -1,9 +1,5 @@
-import { Button } from "@/components/ui/button";
 import { Check, Crown, Lock } from "lucide-react";
-
-// Replace these with your live Stripe Payment Link URLs
-const STRIPE_ONETIME_URL = "https://buy.stripe.com/your-onetime-link";
-const STRIPE_SUBSCRIPTION_URL = "https://buy.stripe.com/your-subscription-link";
+import { CheckoutButton } from "@/components/CheckoutButton";
 
 const startupTier = {
   name: "The Startup Blueprint",
@@ -20,7 +16,7 @@ const startupTier = {
     "Instant download · all sales final",
   ],
   cta: "Buy the Blueprint",
-  href: STRIPE_ONETIME_URL,
+  priceId: "pro_blueprint_onetime",
 };
 
 const proTier = {
@@ -38,7 +34,7 @@ const proTier = {
     "Cancel anytime",
   ],
   cta: "Start Upstream Pro",
-  href: STRIPE_SUBSCRIPTION_URL,
+  priceId: "upstream_pro_monthly",
 };
 
 const PricingSection = () => {
@@ -81,16 +77,14 @@ const PricingSection = () => {
               ))}
             </ul>
 
-            <Button
-              asChild
+            <CheckoutButton
+              priceId={startupTier.priceId}
               size="lg"
               variant="cta"
               className="w-full py-6 text-base font-heading font-bold"
             >
-              <a href={startupTier.href} target="_blank" rel="noopener noreferrer">
-                {startupTier.cta}
-              </a>
-            </Button>
+              {startupTier.cta}
+            </CheckoutButton>
             <p className="mt-4 text-xs text-center text-muted-foreground font-body">
               One-time payment · Instant PDF · All sales final
             </p>
@@ -129,16 +123,14 @@ const PricingSection = () => {
               ))}
             </ul>
 
-            <Button
-              asChild
+            <CheckoutButton
+              priceId={proTier.priceId}
               size="lg"
               className="relative w-full py-6 text-base font-heading font-bold bg-gradient-to-r from-amber-400 to-amber-600 hover:from-amber-300 hover:to-amber-500 text-slate-950 rounded-full shadow-lg"
             >
-              <a href={proTier.href} target="_blank" rel="noopener noreferrer">
-                <Lock className="h-4 w-4" />
-                {proTier.cta}
-              </a>
-            </Button>
+              <Lock className="h-4 w-4 mr-1" />
+              {proTier.cta}
+            </CheckoutButton>
             <p className="relative mt-4 text-xs text-center text-slate-500 font-body">
               Recurring subscription · Cancel anytime · Unlocks Upstream Hub
             </p>

@@ -1,28 +1,35 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
-import { Lock, Crown, ArrowLeft, Calculator, FileText, Briefcase } from "lucide-react";
+import { Lock, Crown, ArrowLeft, Calculator, FileText, Briefcase, Loader2 } from "lucide-react";
 import LuxuryQuoteBuilder from "@/components/upstream/LuxuryQuoteBuilder";
 import PremiumProposalGenerator from "@/components/upstream/PremiumProposalGenerator";
 import B2BPitchVault from "@/components/upstream/B2BPitchVault";
 import { QuoteProvider } from "@/components/upstream/QuoteContext";
-
-// Replace with your live Stripe subscription checkout URL
-const STRIPE_SUBSCRIPTION_URL = "https://buy.stripe.com/your-subscription-link";
-const STORAGE_KEY = "upstream-pro-active";
+import { useAuth } from "@/hooks/useAuth";
+import { useSubscription } from "@/hooks/useSubscription";
+import { usePaddleCheckout } from "@/hooks/usePaddleCheckout";
 
 const UpstreamHub = () => {
-  const [unlocked, setUnlocked] = useState(false);
+  const { user, loading: authLoading } = useAuth();
+  const { isActive, loading: subLoading } = useSubscription();
+  const { openCheckout, loading: checkoutLoading } = usePaddleCheckout();
+  const navigate = useNavigate();
+  const unlocked = isActive;
+  const loading = authLoading || subLoading;
 
-  useEffect(() => {
-    // Stripe success redirect can append ?upstream_unlocked=1 to flip the flag
-    const params = new URLSearchParams(window.location.search);
-    if (params.get("upstream_unlocked") === "1") {
-      localStorage.setItem(STORAGE_KEY, "true");
+  const onUpgrade = () => {
+    if (!user) {
+      navigate(`/auth?redirect=${encodeURIComponent("/upstream-hub")}`);
+      return;
     }
-    if (localStorage.getItem(STORAGE_KEY) === "true") setUnlocked(true);
-  }, []);
+    openCheckout({
+      priceId: "upstream_pro_monthly",
+      userId: user.id,
+      customerEmail: user.email,
+      successUrl: `${window.location.origin}/checkout/success?price=upstream_pro_monthly`,
+    });
+  };
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100" style={{ colorScheme: "dark" }}>
@@ -50,7 +57,6 @@ const UpstreamHub = () => {
 
       <main className="relative container py-10">
         <QuoteProvider>
-          {/* Always render the hub content underneath so the modal feels like an overlay */}
           <div className={unlocked ? "" : "pointer-events-none select-none blur-sm opacity-60"}>
             <div className="mb-8">
               <h1 className="font-heading font-extrabold text-3xl md:text-4xl bg-gradient-to-r from-amber-200 via-amber-400 to-amber-600 bg-clip-text text-transparent">
@@ -82,7 +88,6 @@ const UpstreamHub = () => {
         </QuoteProvider>
       </main>
 
-      {/* Glassmorphic premium lock modal */}
       {!unlocked && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           <div className="absolute inset-0 bg-slate-950/70 backdrop-blur-md" />
@@ -91,7 +96,7 @@ const UpstreamHub = () => {
             <div className="relative">
               <div className="flex justify-center mb-5">
                 <div className="h-14 w-14 rounded-full bg-amber-500/10 border border-amber-400/40 flex items-center justify-center">
-                  <Lock className="h-6 w-6 text-amber-300" />
+                  {loading ? <Loader2 className="h-6 w-6 text-amber-300 animate-spin" /> : <Lock className="h-6 w-6 text-amber-300" />}
                 </div>
               </div>
               <h2 className="text-2xl font-heading font-bold text-center bg-gradient-to-r from-amber-200 to-amber-500 bg-clip-text text-transparent mb-3">
@@ -101,12 +106,11 @@ const UpstreamHub = () => {
                 This section requires an active Upstream Pro Subscription. Upgrade to unlock luxury pricing engines and B2B proposal tools.
               </p>
               <Button
-                asChild
+                onClick={onUpgrade}
+                disabled={loading || checkoutLoading}
                 className="w-full bg-gradient-to-r from-amber-400 to-amber-600 hover:from-amber-300 hover:to-amber-500 text-slate-950 font-bold rounded-full py-6"
               >
-                <a href={STRIPE_SUBSCRIPTION_URL} target="_blank" rel="noopener noreferrer">
-                  Upgrade to Upstream Pro · $49.99/mo
-                </a>
+                {checkoutLoading ? "Opening checkout…" : "Upgrade to Upstream Pro · $49.99/mo"}
               </Button>
               <Link
                 to="/"

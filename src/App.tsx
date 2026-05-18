@@ -6,7 +6,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import ProGuide from "./pages/ProGuide";
 import UpstreamHub from "./pages/UpstreamHub";
+import AuthPage from "./pages/Auth";
+import CheckoutSuccess from "./pages/CheckoutSuccess";
 import NotFound from "./pages/NotFound";
+import { AuthProvider } from "@/hooks/useAuth";
+import { PaymentTestModeBanner } from "@/components/PaymentTestModeBanner";
 
 const queryClient = new QueryClient();
 
@@ -16,13 +20,18 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/pro-guide" element={<ProGuide />} />
-          <Route path="/upstream-hub" element={<UpstreamHub />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <AuthProvider>
+          <PaymentTestModeBanner />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/pro-guide" element={<ProGuide />} />
+            <Route path="/upstream-hub" element={<UpstreamHub />} />
+            <Route path="/auth" element={<AuthPage />} />
+            <Route path="/checkout/success" element={<CheckoutSuccess />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </AuthProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
