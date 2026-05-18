@@ -9,7 +9,7 @@ const Footer = () => {
             <a href="#" className="flex items-center gap-2 mb-3">
               <Palmtree className="h-6 w-6 text-accent" />
               <span className="font-heading font-extrabold text-lg">
-                tropicalbounce.com
+                Pro Blueprint
               </span>
             </a>
             <p className="text-sm text-primary-foreground/60 max-w-xs font-body">
@@ -41,7 +41,7 @@ const Footer = () => {
 
         <div className="border-t border-primary-foreground/10 pt-6 text-center">
           <p className="text-sm text-primary-foreground/40 font-body">
-            © {new Date().getFullYear()} tropicalbounce.com. All rights reserved.
+            © {new Date().getFullYear()} Pro Blueprint. All rights reserved.
           </p>
         </div>
       </div>
