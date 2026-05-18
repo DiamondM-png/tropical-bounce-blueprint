@@ -9,6 +9,9 @@ import UpstreamHub from "./pages/UpstreamHub";
 import AuthPage from "./pages/Auth";
 import CheckoutSuccess from "./pages/CheckoutSuccess";
 import Checkout from "./pages/Checkout";
+import Account from "./pages/Account";
+import ForgotPassword from "./pages/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword";
 import NotFound from "./pages/NotFound";
 import { AuthProvider } from "@/hooks/useAuth";
 import { PaymentTestModeBanner } from "@/components/PaymentTestModeBanner";
@@ -30,6 +33,9 @@ const App = () => (
             <Route path="/auth" element={<AuthPage />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/checkout/success" element={<CheckoutSuccess />} />
+            <Route path="/account" element={<Account />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/reset-password" element={<ResetPassword />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

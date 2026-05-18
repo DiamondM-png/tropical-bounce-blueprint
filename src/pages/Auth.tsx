@@ -33,7 +33,13 @@ const AuthPage = () => {
     });
     setBusy(false);
     if (error) return toast.error(error.message);
-    toast.success("Account created — check your email to confirm.");
+    // Auto-confirm is enabled — try immediate signin so users can buy right away.
+    const { error: signinErr } = await supabase.auth.signInWithPassword({ email, password });
+    if (signinErr) {
+      toast.success("Account created — check your email to confirm.");
+    } else {
+      toast.success("Account created. You're signed in.");
+    }
   };
 
   const signIn = async (e: React.FormEvent) => {
@@ -67,6 +73,11 @@ const AuthPage = () => {
                 <div><Label>Email</Label><Input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required /></div>
                 <div><Label>Password</Label><Input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required /></div>
                 <Button type="submit" disabled={busy} className="w-full">{busy ? "Signing in…" : "Sign in"}</Button>
+                <p className="text-center text-sm">
+                  <Link to={`/forgot-password?redirect=${encodeURIComponent(redirect)}`} className="text-muted-foreground hover:text-foreground underline">
+                    Forgot password?
+                  </Link>
+                </p>
               </form>
             </TabsContent>
 

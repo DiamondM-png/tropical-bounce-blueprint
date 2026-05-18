@@ -1,11 +1,13 @@
 import { useEffect } from "react";
 import { Link, Navigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
+import { useSubscription } from "@/hooks/useSubscription";
 import { StripeEmbeddedCheckout } from "@/components/StripeEmbeddedCheckout";
 import { Loader2 } from "lucide-react";
 
 const Checkout = () => {
   const { user, loading } = useAuth();
+  const { isActive, sub, loading: subLoading } = useSubscription();
   const [params] = useSearchParams();
   const priceId = params.get("priceId") || "";
 
@@ -13,7 +15,7 @@ const Checkout = () => {
     document.title = "Checkout — Tropical Bounce";
   }, []);
 
-  if (loading) {
+  if (loading || subLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
@@ -34,6 +36,11 @@ const Checkout = () => {
         </div>
       </div>
     );
+  }
+
+  // Prevent duplicate subscription
+  if (priceId === "upstream_pro_monthly" && isActive && sub?.price_id === "upstream_pro_monthly") {
+    return <Navigate to="/account" replace />;
   }
 
   const returnUrl = `${window.location.origin}/checkout/success?price=${priceId}&session_id={CHECKOUT_SESSION_ID}`;
