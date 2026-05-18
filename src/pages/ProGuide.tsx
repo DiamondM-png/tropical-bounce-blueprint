@@ -123,7 +123,7 @@ const ProGuide = () => {
             Back to home
           </Link>
           <Button variant="ctaInverse" size="sm" asChild>
-            <Link to="/#pricing">Get Pro Blueprint — $19.99</Link>
+            <Link to="/#pricing">Get Inflatable Enterprise Manual — $19.99</Link>
           </Button>
         </div>
       </header>
@@ -133,7 +133,7 @@ const ProGuide = () => {
         <div className="container mx-auto max-w-4xl text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary-foreground/10 text-sm font-body mb-4">
             <Sparkles className="h-4 w-4" />
-            Pro Blueprint · Instant PDF Download
+            Inflatable Enterprise Manual · Instant PDF Download
           </div>
           <h1 className="font-heading font-bold text-4xl md:text-5xl mb-4">
             The Pro Bounce Business Blueprint
@@ -247,13 +247,13 @@ const ProGuide = () => {
       <section className="py-16 px-4 bg-gradient-to-br from-secondary to-accent text-secondary-foreground">
         <div className="container mx-auto max-w-2xl text-center">
           <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4">
-            Get the Pro Blueprint instantly
+            Get the Inflatable Enterprise Manual instantly
           </h2>
           <p className="text-secondary-foreground/80 mb-8 font-body">
             Complete PDF guide — $19.99, one-time. All sales final.
           </p>
           <Button variant="ctaInverse" size="lg" asChild>
-            <Link to="/#pricing">Order Pro Blueprint — $19.99</Link>
+            <Link to="/#pricing">Order Inflatable Enterprise Manual — $19.99</Link>
           </Button>
         </div>
       </section>
