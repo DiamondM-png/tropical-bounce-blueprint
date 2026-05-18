@@ -8,27 +8,21 @@ import B2BPitchVault from "@/components/upstream/B2BPitchVault";
 import { QuoteProvider } from "@/components/upstream/QuoteContext";
 import { useAuth } from "@/hooks/useAuth";
 import { useSubscription } from "@/hooks/useSubscription";
-import { usePaddleCheckout } from "@/hooks/usePaddleCheckout";
 
 const UpstreamHub = () => {
   const { user, loading: authLoading } = useAuth();
   const { isActive, loading: subLoading } = useSubscription();
-  const { openCheckout, loading: checkoutLoading } = usePaddleCheckout();
   const navigate = useNavigate();
   const unlocked = isActive;
   const loading = authLoading || subLoading;
+  const checkoutLoading = false;
 
   const onUpgrade = () => {
     if (!user) {
       navigate(`/auth?redirect=${encodeURIComponent("/upstream-hub")}`);
       return;
     }
-    openCheckout({
-      priceId: "upstream_pro_monthly",
-      userId: user.id,
-      customerEmail: user.email,
-      successUrl: `${window.location.origin}/checkout/success?price=upstream_pro_monthly`,
-    });
+    navigate(`/checkout?priceId=upstream_pro_monthly`);
   };
 
   return (
