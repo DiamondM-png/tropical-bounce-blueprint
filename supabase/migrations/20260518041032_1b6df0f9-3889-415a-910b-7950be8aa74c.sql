@@ -1,0 +1,7 @@
+ALTER TABLE public.purchases RENAME COLUMN paddle_transaction_id TO stripe_session_id;
+ALTER INDEX public.purchases_paddle_transaction_id_key RENAME TO purchases_stripe_session_id_key;
+
+ALTER TABLE public.subscriptions RENAME COLUMN paddle_subscription_id TO stripe_subscription_id;
+ALTER TABLE public.subscriptions RENAME COLUMN paddle_customer_id TO stripe_customer_id;
+ALTER INDEX public.subscriptions_paddle_subscription_id_key RENAME TO subscriptions_stripe_subscription_id_key;
+ALTER INDEX public.idx_subscriptions_paddle_id RENAME TO idx_subscriptions_stripe_id;
