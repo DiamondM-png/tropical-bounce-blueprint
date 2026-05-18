@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Palmtree, Lock } from "lucide-react";
+import { Menu, X, Palmtree, Lock, LogOut } from "lucide-react";
+import { useAuth } from "@/hooks/useAuth";
 
 const navLinks = [
   { label: "Features", href: "#features" },
@@ -12,6 +13,7 @@ const navLinks = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const { user, signOut } = useAuth();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
@@ -41,9 +43,15 @@ const Navbar = () => {
             <Lock className="h-3.5 w-3.5" />
             Upstream Hub
           </Link>
-          <Button variant="cta" size="sm">
-            Get Started
-          </Button>
+          {user ? (
+            <Button variant="ghost" size="sm" onClick={signOut} className="gap-1.5">
+              <LogOut className="h-4 w-4" /> Sign out
+            </Button>
+          ) : (
+            <Button variant="cta" size="sm" asChild>
+              <Link to="/auth">Sign in</Link>
+            </Button>
+          )}
         </div>
 
         {/* Mobile toggle */}
@@ -73,9 +81,15 @@ const Navbar = () => {
             <Lock className="h-3.5 w-3.5" />
             Upstream Hub
           </Link>
-          <Button variant="cta" size="sm" className="w-full mt-2">
-            Get Started
-          </Button>
+          {user ? (
+            <Button variant="ghost" size="sm" onClick={() => { signOut(); setOpen(false); }} className="w-full mt-2">
+              Sign out
+            </Button>
+          ) : (
+            <Button variant="cta" size="sm" className="w-full mt-2" asChild>
+              <Link to="/auth" onClick={() => setOpen(false)}>Sign in</Link>
+            </Button>
+          )}
         </div>
       )}
     </nav>
