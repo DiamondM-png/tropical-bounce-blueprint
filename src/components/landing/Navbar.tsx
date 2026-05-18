@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Palmtree, Lock, LogOut } from "lucide-react";
+import { Menu, X, Palmtree, Lock, LogOut, UserCircle } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
 
 const navLinks = [
@@ -44,9 +44,14 @@ const Navbar = () => {
             Upstream Hub
           </Link>
           {user ? (
-            <Button variant="ghost" size="sm" onClick={signOut} className="gap-1.5">
-              <LogOut className="h-4 w-4" /> Sign out
-            </Button>
+            <>
+              <Button variant="ghost" size="sm" asChild className="gap-1.5">
+                <Link to="/account"><UserCircle className="h-4 w-4" /> Account</Link>
+              </Button>
+              <Button variant="ghost" size="sm" onClick={signOut} className="gap-1.5">
+                <LogOut className="h-4 w-4" /> Sign out
+              </Button>
+            </>
           ) : (
             <Button variant="cta" size="sm" asChild>
               <Link to="/auth">Sign in</Link>
@@ -82,9 +87,14 @@ const Navbar = () => {
             Upstream Hub
           </Link>
           {user ? (
-            <Button variant="ghost" size="sm" onClick={() => { signOut(); setOpen(false); }} className="w-full mt-2">
-              Sign out
-            </Button>
+            <>
+              <Link to="/account" onClick={() => setOpen(false)} className="block text-sm font-heading font-semibold text-foreground">
+                Account
+              </Link>
+              <Button variant="ghost" size="sm" onClick={() => { signOut(); setOpen(false); }} className="w-full mt-2">
+                Sign out
+              </Button>
+            </>
           ) : (
             <Button variant="cta" size="sm" className="w-full mt-2" asChild>
               <Link to="/auth" onClick={() => setOpen(false)}>Sign in</Link>
