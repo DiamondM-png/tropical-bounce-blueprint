@@ -132,7 +132,7 @@ const PricingSection = () => {
               {proTier.cta}
             </CheckoutButton>
             <p className="relative mt-4 text-xs text-center text-slate-500 font-body">
-              Recurring subscription · Cancel anytime · Unlocks Upstream Hub
+              Recurring subscription · All subscriptions final after 30 days · No refunds
             </p>
           </div>
         </div>
