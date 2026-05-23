@@ -31,7 +31,7 @@ const proTier = {
     "B2B Proposal Generator with print-to-PDF",
     "Pitch Vault — Elite Planner & Country Club templates",
     "Midnight Breakdown & Weather Protection logic",
-    "Cancel anytime",
+    "All subscriptions final after 30 days · No refunds",
   ],
   cta: "Start Upstream Pro",
   priceId: "upstream_pro_monthly",
@@ -132,7 +132,7 @@ const PricingSection = () => {
               {proTier.cta}
             </CheckoutButton>
             <p className="relative mt-4 text-xs text-center text-slate-500 font-body">
-              Recurring subscription · Cancel anytime · Unlocks Upstream Hub
+              Recurring subscription · All subscriptions final after 30 days · No refunds
             </p>
           </div>
         </div>
