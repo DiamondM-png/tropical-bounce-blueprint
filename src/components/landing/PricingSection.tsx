@@ -127,7 +127,7 @@ const PricingSection = () => {
             <CheckoutButton
               priceId={proTier.priceId}
               size="lg"
-              className="relative w-full py-6 text-base font-heading font-bold bg-gradient-to-r from-amber-400 to-amber-600 hover:from-amber-300 hover:to-amber-500 text-slate-950 rounded-full shadow-lg"
+              className="relative w-full py-6 text-base font-heading font-bold bg-[#F59E0B] hover:bg-[#F59E0B]/90 text-[#1C1C2E] rounded-full shadow-lg"
             >
               <Lock className="h-4 w-4 mr-1" />
               {proTier.cta}
