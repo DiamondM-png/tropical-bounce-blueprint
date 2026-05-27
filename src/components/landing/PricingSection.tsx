@@ -2,7 +2,7 @@ import { Check, Crown, Lock } from "lucide-react";
 import { CheckoutButton } from "@/components/CheckoutButton";
 
 const startupTier = {
-  name: "The Startup Blueprint",
+  name: "The Launch Blueprint",
   price: "$19.99",
   period: "one-time",
   description:
