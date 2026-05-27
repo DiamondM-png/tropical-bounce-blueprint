@@ -41,7 +41,7 @@ const Footer = () => {
 
         <div className="border-t border-primary-foreground/10 pt-6 text-center">
           <p className="text-sm text-primary-foreground/40 font-body">
-            © {new Date().getFullYear()} Inflatable Enterprise Manual. All rights reserved.
+            © 2026 TropicalBounce.com · Payments processed by Diamond Media Publishing LLC · All sales final · No refunds
           </p>
         </div>
       </div>
