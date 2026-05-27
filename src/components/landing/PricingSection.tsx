@@ -26,7 +26,7 @@ const proTier = {
   description:
     "The cloud platform for operators chasing estates, corporate, and luxury weddings.",
   features: [
-    "Interactive Upstream Hub (full app access)",
+    "Interactive Member Portal (full app access)",
     "Luxury Quote Architect — premium pricing engine",
     "B2B Proposal Generator with print-to-PDF",
     "Pitch Vault — Elite Planner & Country Club templates",
