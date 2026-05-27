@@ -40,7 +40,7 @@ const UpstreamHub = () => {
           <div className="flex items-center gap-2">
             <Crown className="h-5 w-5 text-amber-400" />
             <span className="font-heading font-extrabold tracking-tight text-lg bg-gradient-to-r from-amber-300 to-amber-500 bg-clip-text text-transparent">
-              UPSTREAM HUB
+              MEMBER PORTAL
             </span>
             <span className="text-[10px] uppercase tracking-widest text-amber-400/60 border border-amber-400/30 rounded px-1.5 py-0.5 ml-1">
               Pro
@@ -54,7 +54,7 @@ const UpstreamHub = () => {
           <div className={unlocked ? "" : "pointer-events-none select-none blur-sm opacity-60"}>
             <div className="mb-8">
               <h1 className="font-heading font-extrabold text-3xl md:text-4xl bg-gradient-to-r from-amber-200 via-amber-400 to-amber-600 bg-clip-text text-transparent">
-                Upstream Hub
+                Member Portal
               </h1>
               <p className="text-slate-400 mt-2 max-w-2xl">
                 Premium toolkit for estate, corporate, and luxury wedding bookings. Build high-ticket quotes, generate elite proposals, and pitch the right buyers.

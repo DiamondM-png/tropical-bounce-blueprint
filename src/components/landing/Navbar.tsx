@@ -41,7 +41,7 @@ const Navbar = () => {
             className="flex items-center gap-1.5 text-sm font-heading font-semibold px-3 py-1.5 rounded-full bg-slate-900 text-amber-400 border border-amber-500/50 hover:bg-slate-800 hover:border-amber-400 transition-all"
           >
             <Lock className="h-3.5 w-3.5" />
-            Upstream Hub
+            Member Portal
           </Link>
           {user ? (
             <>
@@ -84,7 +84,7 @@ const Navbar = () => {
             className="flex items-center gap-1.5 text-sm font-heading font-semibold text-amber-600"
           >
             <Lock className="h-3.5 w-3.5" />
-            Upstream Hub
+            Member Portal
           </Link>
           {user ? (
             <>

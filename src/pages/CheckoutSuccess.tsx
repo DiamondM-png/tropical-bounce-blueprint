@@ -86,7 +86,7 @@ const CheckoutSuccess = () => {
               <>
                 <p className="text-slate-300">Your subscription is active. Unlock the full hub below.</p>
                 <Button asChild className="w-full bg-gradient-to-r from-amber-400 to-amber-600 text-slate-950 hover:from-amber-300 hover:to-amber-500 font-bold">
-                  <Link to="/upstream-hub">Enter Upstream Hub →</Link>
+                  <Link to="/upstream-hub">Enter Member Portal →</Link>
                 </Button>
                 <Button asChild variant="ghost" className="w-full text-slate-400 hover:text-amber-300">
                   <Link to="/account">View account</Link>
