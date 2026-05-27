@@ -84,7 +84,7 @@ const Navbar = () => {
             className="flex items-center gap-1.5 text-sm font-heading font-semibold text-amber-600"
           >
             <Lock className="h-3.5 w-3.5" />
-            Upstream Hub
+            Member Portal
           </Link>
           {user ? (
             <>
