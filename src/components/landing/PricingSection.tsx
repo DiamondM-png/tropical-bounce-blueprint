@@ -91,16 +91,17 @@ const PricingSection = () => {
           </div>
 
           {/* Card 2 — Upstream Pro (dark/gold) */}
-          <div className="relative rounded-2xl p-8 bg-slate-950 text-slate-100 border-2 border-amber-500 shadow-2xl flex flex-col overflow-hidden">
-            <div className="pointer-events-none absolute -top-24 -right-24 h-64 w-64 rounded-full bg-amber-500/15 blur-3xl" />
-            <div className="pointer-events-none absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-amber-600/10 blur-3xl" />
-
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-              <span className="inline-flex items-center gap-1.5 bg-gradient-to-r from-amber-400 to-amber-600 text-slate-950 text-sm font-heading font-bold px-4 py-1.5 rounded-full shadow-lg">
+          <div className="relative pt-5 flex">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20">
+              <span className="inline-flex items-center gap-1.5 bg-gradient-to-r from-amber-400 to-amber-600 text-slate-950 text-sm font-heading font-bold px-4 py-1.5 rounded-full shadow-lg whitespace-nowrap">
                 <Crown className="h-4 w-4" />
                 Scale Up
               </span>
             </div>
+            <div className="relative rounded-2xl p-8 bg-slate-950 text-slate-100 border-2 border-amber-500 shadow-2xl flex flex-col overflow-hidden w-full">
+            <div className="pointer-events-none absolute -top-24 -right-24 h-64 w-64 rounded-full bg-amber-500/15 blur-3xl" />
+            <div className="pointer-events-none absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-amber-600/10 blur-3xl" />
+
 
             <h3 className="relative text-2xl font-heading font-bold mb-1 bg-gradient-to-r from-amber-200 to-amber-500 bg-clip-text text-transparent">
               {proTier.name}
