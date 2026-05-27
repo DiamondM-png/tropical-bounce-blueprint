@@ -20,7 +20,7 @@ const startupTier = {
 };
 
 const proTier = {
-  name: "The Upstream Pro Platform",
+  name: "Upstream Pro",
   price: "$49.99",
   period: "/month",
   description:
