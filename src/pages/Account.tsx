@@ -135,7 +135,7 @@ const Account = () => {
             {isActive ? (
               <>
                 <Button asChild variant="cta">
-                  <Link to="/upstream-hub">Enter Upstream Hub</Link>
+                  <Link to="/upstream-hub">Enter Member Portal</Link>
                 </Button>
                 <Button variant="outline" onClick={openPortal} disabled={portalLoading}>
                   {portalLoading ? <Loader2 className="h-4 w-4 animate-spin mr-2" /> : <ExternalLink className="h-4 w-4 mr-2" />}
