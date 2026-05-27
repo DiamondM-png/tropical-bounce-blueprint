@@ -135,7 +135,9 @@ const PricingSection = () => {
             <p className="relative mt-4 text-xs text-center text-slate-500 font-body">
               Recurring subscription · All subscriptions final after 30 days · No refunds
             </p>
+            </div>
           </div>
+
         </div>
       </div>
     </section>
