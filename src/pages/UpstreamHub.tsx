@@ -40,7 +40,7 @@ const UpstreamHub = () => {
           <div className="flex items-center gap-2">
             <Crown className="h-5 w-5 text-amber-400" />
             <span className="font-heading font-extrabold tracking-tight text-lg bg-gradient-to-r from-amber-300 to-amber-500 bg-clip-text text-transparent">
-              UPSTREAM HUB
+              MEMBER PORTAL
             </span>
             <span className="text-[10px] uppercase tracking-widest text-amber-400/60 border border-amber-400/30 rounded px-1.5 py-0.5 ml-1">
               Pro
