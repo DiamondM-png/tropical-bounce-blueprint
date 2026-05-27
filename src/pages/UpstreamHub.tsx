@@ -54,7 +54,7 @@ const UpstreamHub = () => {
           <div className={unlocked ? "" : "pointer-events-none select-none blur-sm opacity-60"}>
             <div className="mb-8">
               <h1 className="font-heading font-extrabold text-3xl md:text-4xl bg-gradient-to-r from-amber-200 via-amber-400 to-amber-600 bg-clip-text text-transparent">
-                Upstream Hub
+                Member Portal
               </h1>
               <p className="text-slate-400 mt-2 max-w-2xl">
                 Premium toolkit for estate, corporate, and luxury wedding bookings. Build high-ticket quotes, generate elite proposals, and pitch the right buyers.
