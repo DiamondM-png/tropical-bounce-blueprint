@@ -22,13 +22,19 @@ const PremiumProposalGenerator = () => {
   return (
     <div className="space-y-4">
       <div className="flex justify-end print:hidden">
-        <Button
-          onClick={handlePrint}
-          className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold gap-2"
-        >
+        <Button onClick={handlePrint} className="up-btn-primary gap-2 px-4 py-2">
           <Printer className="h-4 w-4" /> Print / Save as PDF
         </Button>
       </div>
+
+      <div id="proposal-sheet" className="bg-white text-slate-900 rounded-xl shadow-2xl mx-auto max-w-4xl p-10 md:p-14 print:shadow-none print:rounded-none print:max-w-none print:p-12">
+        {/* Header */}
+        <div className="flex items-start justify-between pb-6" style={{ borderBottom: "4px solid #2bbfb3" }}>
+          <div>
+            <div className="flex items-center gap-2 mb-2">
+              <Crown className="h-6 w-6" style={{ color: "#2bbfb3" }} />
+              <span className="font-heading font-extrabold tracking-widest text-sm" style={{ color: "#1a9e93" }}>UPSTREAM PRO</span>
+            </div>
 
       <div id="proposal-sheet" className="bg-white text-slate-900 rounded-xl shadow-2xl mx-auto max-w-4xl p-10 md:p-14 print:shadow-none print:rounded-none print:max-w-none print:p-12">
         {/* Header */}
