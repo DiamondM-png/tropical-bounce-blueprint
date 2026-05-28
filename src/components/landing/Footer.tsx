@@ -8,13 +8,10 @@ const Footer = () => {
           <div>
             <a href="#" className="flex items-center gap-2 mb-3">
               <Palmtree className="h-6 w-6 text-accent" />
-              <span className="font-heading font-extrabold text-lg">
-                Inflatable Enterprise Manual
-              </span>
+              <span className="font-heading font-extrabold text-lg">Inflatable Enterprise Manual</span>
             </a>
             <p className="text-sm text-primary-foreground/60 max-w-xs font-body">
-              Your complete toolkit for launching a profitable bounce house 
-              rental business.
+              Your complete toolkit for launching a profitable bounce house rental business.
             </p>
           </div>
 
@@ -22,18 +19,46 @@ const Footer = () => {
             <div>
               <h4 className="font-heading font-bold text-sm mb-3">Product</h4>
               <ul className="space-y-2 text-sm text-primary-foreground/60 font-body">
-                <li><a href="#features" className="hover:text-primary-foreground transition-colors">Features</a></li>
-                <li><a href="#pricing" className="hover:text-primary-foreground transition-colors">Pricing</a></li>
-                <li><a href="#testimonials" className="hover:text-primary-foreground transition-colors">Testimonials</a></li>
-                <li><a href="#faq" className="hover:text-primary-foreground transition-colors">FAQ</a></li>
+                <li>
+                  <a href="#features" className="hover:text-primary-foreground transition-colors">
+                    Features
+                  </a>
+                </li>
+                <li>
+                  <a href="#pricing" className="hover:text-primary-foreground transition-colors">
+                    Pricing
+                  </a>
+                </li>
+                <li>
+                  <a href="#testimonials" className="hover:text-primary-foreground transition-colors">
+                    Testimonials
+                  </a>
+                </li>
+                <li>
+                  <a href="#faq" className="hover:text-primary-foreground transition-colors">
+                    FAQ
+                  </a>
+                </li>
               </ul>
             </div>
             <div>
               <h4 className="font-heading font-bold text-sm mb-3">Legal</h4>
               <ul className="space-y-2 text-sm text-primary-foreground/60 font-body">
-                <li><a href="#" className="hover:text-primary-foreground transition-colors">Terms of Service</a></li>
-                <li><a href="#" className="hover:text-primary-foreground transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-primary-foreground transition-colors">Refund Policy</a></li>
+                <li>
+                  <a href="#" className="hover:text-primary-foreground transition-colors">
+                    Terms of Service
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-primary-foreground transition-colors">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-primary-foreground transition-colors">
+                    Refund Policy
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
@@ -41,7 +66,8 @@ const Footer = () => {
 
         <div className="border-t border-primary-foreground/10 pt-6 text-center">
           <p className="text-sm text-primary-foreground/40 font-body">
-            © 2026 TropicalBounce.com · Payments processed by Diamond Media Publishing LLC · All sales final · No refunds
+            © 2026 TropicalBounce.com · All sales final · No refunds · Payments processed by Diamond Media Publishing
+            LLC
           </p>
         </div>
       </div>
