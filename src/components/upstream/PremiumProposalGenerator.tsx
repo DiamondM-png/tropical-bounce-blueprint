@@ -55,7 +55,7 @@ const PremiumProposalGenerator = () => {
           </div>
           <div className="sm:text-right">
             <div className="text-xs uppercase tracking-wider text-slate-500 mb-1">Event Tier</div>
-            <div className="font-heading font-bold text-lg text-amber-700">{tierLabel}</div>
+            <div className="font-heading font-bold text-lg text-[#1a9e93]">{tierLabel}</div>
             <div className="text-slate-600 text-sm">{quote.eventDate ? new Date(quote.eventDate).toLocaleDateString(undefined, { weekday: "long", year: "numeric", month: "long", day: "numeric" }) : "Date TBD"}</div>
           </div>
         </div>
@@ -79,7 +79,7 @@ const PremiumProposalGenerator = () => {
           <tfoot>
             <tr>
               <td className="pt-6 text-right text-slate-600 uppercase text-xs tracking-wider">Total Investment</td>
-              <td className="pt-6 text-right font-heading font-extrabold text-3xl text-amber-700">{fmt(calc.subtotal)}</td>
+              <td className="pt-6 text-right font-heading font-extrabold text-3xl text-[#1a9e93]">{fmt(calc.subtotal)}</td>
             </tr>
           </tfoot>
         </table>
