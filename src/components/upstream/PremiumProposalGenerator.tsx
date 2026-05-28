@@ -38,9 +38,6 @@ const PremiumProposalGenerator = () => {
             <h1 className="font-heading font-extrabold text-3xl text-slate-900">Premium Event Proposal</h1>
             <p className="text-slate-500 text-sm mt-1">tropicalbounce.com — Upstream Pro</p>
           </div>
-            <h1 className="font-heading font-extrabold text-3xl text-slate-900">Premium Event Proposal</h1>
-            <p className="text-slate-500 text-sm mt-1">tropicalbounce.com — Luxury Division</p>
-          </div>
           <div className="text-right text-sm">
             <div className="text-slate-500 uppercase tracking-wider text-xs">Proposal #</div>
             <div className="font-mono font-bold text-slate-900">{`UH-${Date.now().toString().slice(-6)}`}</div>
