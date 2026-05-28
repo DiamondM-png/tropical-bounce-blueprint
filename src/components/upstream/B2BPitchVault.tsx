@@ -33,9 +33,9 @@ Hi {{First Name}},
 I've followed your work on {{Recent Event}} — the production quality stood out, especially {{Specific Detail}}. We run the luxury division at tropicalbounce.com, exclusively handling estate, gala, and ultra-private events with custom fabrication and white-glove logistics.
 
 A few things that may matter to your clients:
-• Custom-branded installations built to spec
-• Discreet, uniformed crews and silent breakdown
-• $2M liability + storm-rated anchoring on every job
+- Custom-branded installations built to spec
+- Discreet, uniformed crews and silent breakdown
+- $2M liability + storm-rated anchoring on every job
 
 Would you be open to a 15-minute call this week? I'd love to walk you through our recent {{Tier}} build for a similar client.
 
@@ -61,9 +61,9 @@ Dear {{Manager Name}},
 Many of the clubs we partner with use member family days, junior tournaments, and seasonal galas as key retention moments — but coordinating premium activations through standard vendors can compromise the brand.
 
 We work exclusively with private clubs and estates to deliver:
-• Member-day installations with custom club branding
-• Insurance certificates pre-cleared with most carriers
-• Off-hours setup so course/grounds aren't impacted
+- Member-day installations with custom club branding
+- Insurance certificates pre-cleared with most carriers
+- Off-hours setup so course/grounds aren't impacted
 
 I'd be glad to offer your club a complimentary on-site walkthrough and a sample {{Event Type}} concept. May I send a printed proposal to your attention?
 
@@ -90,9 +90,9 @@ Hi {{First Name}},
 Your aesthetic on {{Recent Wedding}} is exactly the level we build for. We design and fabricate luxury event installations for {{City}}-area weddings — fully custom, brand-matched, and engineered to disappear gracefully from photography.
 
 I'd love to propose a no-cost styled shoot with your team:
-• You curate creative direction and the venue
-• We handle fabrication, install, and a 4-hour shoot window
-• You get exclusive imagery for your portfolio and socials
+- You curate creative direction and the venue
+- We handle fabrication, install, and a 4-hour shoot window
+- You get exclusive imagery for your portfolio and socials
 
 If this is interesting, I'll send concept boards within 48 hours of your reply. Always happy to be considered for your preferred-vendor list.
 
