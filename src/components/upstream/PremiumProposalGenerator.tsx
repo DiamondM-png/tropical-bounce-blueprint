@@ -22,24 +22,21 @@ const PremiumProposalGenerator = () => {
   return (
     <div className="space-y-4">
       <div className="flex justify-end print:hidden">
-        <Button
-          onClick={handlePrint}
-          className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold gap-2"
-        >
+        <Button onClick={handlePrint} className="up-btn-primary gap-2 px-4 py-2">
           <Printer className="h-4 w-4" /> Print / Save as PDF
         </Button>
       </div>
 
       <div id="proposal-sheet" className="bg-white text-slate-900 rounded-xl shadow-2xl mx-auto max-w-4xl p-10 md:p-14 print:shadow-none print:rounded-none print:max-w-none print:p-12">
         {/* Header */}
-        <div className="flex items-start justify-between border-b-4 border-amber-500 pb-6">
+        <div className="flex items-start justify-between pb-6" style={{ borderBottom: "4px solid #2bbfb3" }}>
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <Crown className="h-6 w-6 text-amber-600" />
-              <span className="font-heading font-extrabold text-amber-700 tracking-widest text-sm">UPSTREAM HUB</span>
+              <Crown className="h-6 w-6" style={{ color: "#2bbfb3" }} />
+              <span className="font-heading font-extrabold tracking-widest text-sm" style={{ color: "#1a9e93" }}>UPSTREAM PRO</span>
             </div>
             <h1 className="font-heading font-extrabold text-3xl text-slate-900">Premium Event Proposal</h1>
-            <p className="text-slate-500 text-sm mt-1">tropicalbounce.com — Luxury Division</p>
+            <p className="text-slate-500 text-sm mt-1">tropicalbounce.com — Upstream Pro</p>
           </div>
           <div className="text-right text-sm">
             <div className="text-slate-500 uppercase tracking-wider text-xs">Proposal #</div>
@@ -58,7 +55,7 @@ const PremiumProposalGenerator = () => {
           </div>
           <div className="sm:text-right">
             <div className="text-xs uppercase tracking-wider text-slate-500 mb-1">Event Tier</div>
-            <div className="font-heading font-bold text-lg text-amber-700">{tierLabel}</div>
+            <div className="font-heading font-bold text-lg text-[#1a9e93]">{tierLabel}</div>
             <div className="text-slate-600 text-sm">{quote.eventDate ? new Date(quote.eventDate).toLocaleDateString(undefined, { weekday: "long", year: "numeric", month: "long", day: "numeric" }) : "Date TBD"}</div>
           </div>
         </div>
@@ -82,7 +79,7 @@ const PremiumProposalGenerator = () => {
           <tfoot>
             <tr>
               <td className="pt-6 text-right text-slate-600 uppercase text-xs tracking-wider">Total Investment</td>
-              <td className="pt-6 text-right font-heading font-extrabold text-3xl text-amber-700">{fmt(calc.subtotal)}</td>
+              <td className="pt-6 text-right font-heading font-extrabold text-3xl text-[#1a9e93]">{fmt(calc.subtotal)}</td>
             </tr>
           </tfoot>
         </table>

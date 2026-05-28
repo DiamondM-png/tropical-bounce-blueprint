@@ -1,7 +1,7 @@
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
-import { Lock, Crown, ArrowLeft, Calculator, FileText, Briefcase, Loader2 } from "lucide-react";
+import { Lock, ArrowLeft, Calculator, FileText, Briefcase, Loader2 } from "lucide-react";
 import LuxuryQuoteBuilder from "@/components/upstream/LuxuryQuoteBuilder";
 import PremiumProposalGenerator from "@/components/upstream/PremiumProposalGenerator";
 import B2BPitchVault from "@/components/upstream/B2BPitchVault";
@@ -9,13 +9,27 @@ import { QuoteProvider } from "@/components/upstream/QuoteContext";
 import { useAuth } from "@/hooks/useAuth";
 import { useSubscription } from "@/hooks/useSubscription";
 
+type TabKey = "quote" | "proposal" | "pitch";
+
+const NAV: { key: TabKey; label: string; icon: React.ComponentType<{ className?: string }> }[] = [
+  { key: "quote", label: "Luxury Quote Builder", icon: Calculator },
+  { key: "proposal", label: "Premium Proposal", icon: FileText },
+  { key: "pitch", label: "B2B Pitch Vault", icon: Briefcase },
+];
+
+const TITLES: Record<TabKey, string> = {
+  quote: "Luxury Quote Builder",
+  proposal: "Premium Proposal",
+  pitch: "B2B Pitch Vault",
+};
+
 const UpstreamHub = () => {
   const { user, loading: authLoading } = useAuth();
   const { isActive, loading: subLoading } = useSubscription();
   const navigate = useNavigate();
   const unlocked = isActive;
   const loading = authLoading || subLoading;
-  const checkoutLoading = false;
+  const [tab, setTab] = useState<TabKey>("quote");
 
   const onUpgrade = () => {
     if (!user) {
@@ -26,93 +40,153 @@ const UpstreamHub = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100" style={{ colorScheme: "dark" }}>
-      <div className="pointer-events-none fixed inset-0 overflow-hidden">
-        <div className="absolute -top-40 left-1/3 h-96 w-96 rounded-full bg-amber-500/10 blur-3xl" />
-        <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-amber-600/5 blur-3xl" />
-      </div>
-
-      <header className="relative border-b border-amber-500/20 bg-slate-950/80 backdrop-blur">
-        <div className="container flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-2 text-slate-400 hover:text-amber-400 transition-colors text-sm">
-            <ArrowLeft className="h-4 w-4" /> Back to site
-          </Link>
-          <div className="flex items-center gap-2">
-            <Crown className="h-5 w-5 text-amber-400" />
-            <span className="font-heading font-extrabold tracking-tight text-lg bg-gradient-to-r from-amber-300 to-amber-500 bg-clip-text text-transparent">
-              MEMBER PORTAL
-            </span>
-            <span className="text-[10px] uppercase tracking-widest text-amber-400/60 border border-amber-400/30 rounded px-1.5 py-0.5 ml-1">
-              Pro
-            </span>
-          </div>
-        </div>
-      </header>
-
-      <main className="relative container py-10">
-        <QuoteProvider>
-          <div className={unlocked ? "" : "pointer-events-none select-none blur-sm opacity-60"}>
-            <div className="mb-8">
-              <h1 className="font-heading font-extrabold text-3xl md:text-4xl bg-gradient-to-r from-amber-200 via-amber-400 to-amber-600 bg-clip-text text-transparent">
-                Member Portal
-              </h1>
-              <p className="text-slate-400 mt-2 max-w-2xl">
-                Premium toolkit for estate, corporate, and luxury wedding bookings. Build high-ticket quotes, generate elite proposals, and pitch the right buyers.
-              </p>
+    <div className="upstream-dashboard" style={{ colorScheme: "dark" }}>
+      <div className="flex min-h-screen">
+        {/* SIDEBAR */}
+        <aside
+          className="hidden md:flex md:flex-col md:w-64 shrink-0 border-r"
+          style={{ background: "var(--up-surface)", borderColor: "var(--up-border)" }}
+        >
+          {/* Logo */}
+          <div className="px-5 py-5 flex items-center gap-3 border-b" style={{ borderColor: "var(--up-border)" }}>
+            <div
+              className="h-10 w-10 rounded-lg flex items-center justify-center text-xl shadow-md"
+              style={{ background: "linear-gradient(135deg, #2bbfb3, #1a9e93)" }}
+              aria-hidden
+            >
+              🏝
             </div>
-
-            <Tabs defaultValue="quote" className="w-full">
-              <TabsList className="bg-slate-900/80 border border-amber-500/20 p-1 h-auto flex-wrap">
-                <TabsTrigger value="quote" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-amber-500 data-[state=active]:to-amber-600 data-[state=active]:text-slate-950 text-slate-300 gap-2">
-                  <Calculator className="h-4 w-4" /> Luxury Quote Builder
-                </TabsTrigger>
-                <TabsTrigger value="proposal" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-amber-500 data-[state=active]:to-amber-600 data-[state=active]:text-slate-950 text-slate-300 gap-2">
-                  <FileText className="h-4 w-4" /> Premium Proposal
-                </TabsTrigger>
-                <TabsTrigger value="pitch" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-amber-500 data-[state=active]:to-amber-600 data-[state=active]:text-slate-950 text-slate-300 gap-2">
-                  <Briefcase className="h-4 w-4" /> B2B Pitch Vault
-                </TabsTrigger>
-              </TabsList>
-
-              <TabsContent value="quote" className="mt-6"><LuxuryQuoteBuilder /></TabsContent>
-              <TabsContent value="proposal" className="mt-6"><PremiumProposalGenerator /></TabsContent>
-              <TabsContent value="pitch" className="mt-6"><B2BPitchVault /></TabsContent>
-            </Tabs>
+            <div className="font-display text-xl leading-none tracking-wider">
+              UPSTREAM <span style={{ color: "var(--up-orange)" }}>PRO</span>
+            </div>
           </div>
-        </QuoteProvider>
-      </main>
+
+          {/* Nav */}
+          <nav className="flex-1 py-4 pr-3 space-y-1">
+            {NAV.map((n) => {
+              const Icon = n.icon;
+              const active = tab === n.key;
+              return (
+                <button
+                  key={n.key}
+                  onClick={() => setTab(n.key)}
+                  className={`up-nav-item ${active ? "active" : ""}`}
+                  data-state={active ? "active" : "inactive"}
+                >
+                  <Icon className="h-4 w-4" />
+                  <span>{n.label}</span>
+                </button>
+              );
+            })}
+          </nav>
+
+          {/* Plan badge */}
+          <div className="p-4">
+            <div className="up-plan-badge">
+              <div className="font-display text-base tracking-wider" style={{ color: "var(--up-teal)" }}>
+                UPSTREAM PRO
+              </div>
+              <div className="font-mono-dm text-[11px] mt-1" style={{ color: "var(--up-muted)" }}>
+                $197/mo · All subscriptions final
+              </div>
+            </div>
+            <Link
+              to="/"
+              className="mt-3 flex items-center justify-center gap-1.5 text-xs font-mono-dm"
+              style={{ color: "var(--up-muted)" }}
+            >
+              <ArrowLeft className="h-3 w-3" /> Back to site
+            </Link>
+          </div>
+        </aside>
+
+        {/* MAIN */}
+        <div className="flex-1 flex flex-col min-w-0">
+          {/* TOPBAR */}
+          <header
+            className="h-16 px-6 flex items-center justify-between border-b sticky top-0 z-30"
+            style={{ background: "var(--up-surface)", borderColor: "var(--up-border)" }}
+          >
+            <h1 className="up-topbar-title text-2xl md:text-3xl">{TITLES[tab]}</h1>
+            <div className="flex items-center gap-2">
+              <span className="up-badge up-badge-primary">PRO MEMBER</span>
+            </div>
+          </header>
+
+          {/* Mobile tabs */}
+          <div className="md:hidden flex gap-1 p-3 border-b overflow-x-auto" style={{ borderColor: "var(--up-border)" }}>
+            {NAV.map((n) => {
+              const active = tab === n.key;
+              return (
+                <button
+                  key={n.key}
+                  onClick={() => setTab(n.key)}
+                  className={`up-nav-item ${active ? "active" : ""} whitespace-nowrap`}
+                  data-state={active ? "active" : "inactive"}
+                >
+                  <n.icon className="h-4 w-4" />
+                  <span>{n.label}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          <main className="flex-1 p-6 md:p-8">
+            <QuoteProvider>
+              <div className={unlocked ? "" : "pointer-events-none select-none blur-sm opacity-60"}>
+                {tab === "quote" && <LuxuryQuoteBuilder />}
+                {tab === "proposal" && <PremiumProposalGenerator />}
+                {tab === "pitch" && <B2BPitchVault />}
+              </div>
+            </QuoteProvider>
+          </main>
+        </div>
+      </div>
 
       {!unlocked && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-          <div className="absolute inset-0 bg-slate-950/70 backdrop-blur-md" />
-          <div className="relative w-full max-w-md rounded-2xl border border-amber-400/30 bg-white/5 backdrop-blur-xl shadow-[0_0_60px_-10px_rgba(245,158,11,0.35)] p-8">
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-amber-400/10 via-transparent to-amber-600/10 pointer-events-none" />
-            <div className="relative">
-              <div className="flex justify-center mb-5">
-                <div className="h-14 w-14 rounded-full bg-amber-500/10 border border-amber-400/40 flex items-center justify-center">
-                  {loading ? <Loader2 className="h-6 w-6 text-amber-300 animate-spin" /> : <Lock className="h-6 w-6 text-amber-300" />}
-                </div>
+          <div className="absolute inset-0 backdrop-blur-md" style={{ background: "rgba(10,22,40,0.75)" }} />
+          <div
+            className="relative w-full max-w-md rounded-2xl p-8"
+            style={{
+              background: "var(--up-card)",
+              border: "1px solid rgba(43,191,179,0.3)",
+              boxShadow: "0 0 60px -10px rgba(43,191,179,0.35)",
+            }}
+          >
+            <div className="flex justify-center mb-5">
+              <div
+                className="h-14 w-14 rounded-full flex items-center justify-center"
+                style={{ background: "var(--up-teal-dim)", border: "1px solid rgba(43,191,179,0.4)" }}
+              >
+                {loading ? (
+                  <Loader2 className="h-6 w-6 animate-spin" style={{ color: "var(--up-teal)" }} />
+                ) : (
+                  <Lock className="h-6 w-6" style={{ color: "var(--up-teal)" }} />
+                )}
               </div>
-              <h2 className="text-2xl font-heading font-bold text-center bg-gradient-to-r from-amber-200 to-amber-500 bg-clip-text text-transparent mb-3">
-                Upstream Pro Required
-              </h2>
-              <p className="text-center text-slate-300 text-sm leading-relaxed mb-6">
-                This section requires an active Upstream Pro Subscription. Upgrade to unlock luxury pricing engines and B2B proposal tools.
-              </p>
-              <Button
-                onClick={onUpgrade}
-                disabled={loading || checkoutLoading}
-                className="w-full bg-gradient-to-r from-amber-400 to-amber-600 hover:from-amber-300 hover:to-amber-500 text-slate-950 font-bold rounded-full py-6"
-              >
-                {checkoutLoading ? "Opening checkout…" : "Upgrade to Upstream Pro · $49.99/mo"}
-              </Button>
-              <Link
-                to="/"
-                className="block text-center text-xs text-slate-400 hover:text-amber-300 mt-4 transition-colors"
-              >
-                ← Back to site
-              </Link>
             </div>
+            <h2 className="font-display text-2xl text-center mb-3" style={{ color: "var(--up-teal)" }}>
+              UPSTREAM PRO REQUIRED
+            </h2>
+            <p className="text-center text-sm leading-relaxed mb-6" style={{ color: "var(--up-body)" }}>
+              This section requires an active Upstream Pro Subscription. Upgrade to unlock luxury pricing engines and
+              B2B proposal tools.
+            </p>
+            <Button
+              onClick={onUpgrade}
+              disabled={loading}
+              className="w-full up-btn-primary rounded-full py-6 text-base"
+            >
+              Upgrade to Upstream Pro · $49.99/mo
+            </Button>
+            <Link
+              to="/"
+              className="block text-center text-xs mt-4 font-mono-dm"
+              style={{ color: "var(--up-muted)" }}
+            >
+              ← Back to site
+            </Link>
           </div>
         </div>
       )}

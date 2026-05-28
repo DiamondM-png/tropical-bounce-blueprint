@@ -5,9 +5,8 @@ import { Switch } from "@/components/ui/switch";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { TrendingUp, DollarSign, Percent } from "lucide-react";
 
-const cardCls = "rounded-xl border border-amber-500/20 bg-slate-900/60 backdrop-blur p-6";
-const labelCls = "text-slate-300 text-xs uppercase tracking-wider";
-const inputCls = "bg-slate-950 border-amber-500/20 text-slate-100 focus-visible:ring-amber-500 mt-1";
+const labelCls = "font-mono-dm text-[11px] uppercase tracking-wider";
+const inputCls = "up-input mt-1";
 
 const fmt = (n: number) =>
   n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
@@ -19,30 +18,30 @@ const LuxuryQuoteBuilder = () => {
     <div className="grid lg:grid-cols-3 gap-6">
       <div className="lg:col-span-2 space-y-6">
         {/* Client */}
-        <div className={cardCls}>
-          <h3 className="font-heading font-bold text-amber-400 mb-4">Client & Event</h3>
+        <div className="up-card p-6">
+          <h3 className="font-display text-xl mb-4" style={{ color: "var(--up-teal)" }}>CLIENT & EVENT</h3>
           <div className="grid sm:grid-cols-2 gap-4">
             <div>
-              <Label className={labelCls}>Client Name</Label>
+              <Label className={labelCls} style={{ color: "var(--up-muted)" }}>Client Name</Label>
               <Input className={inputCls} value={quote.clientName} onChange={(e) => update("clientName", e.target.value)} placeholder="Hamptons Estate LLC" />
             </div>
             <div>
-              <Label className={labelCls}>Venue</Label>
+              <Label className={labelCls} style={{ color: "var(--up-muted)" }}>Venue</Label>
               <Input className={inputCls} value={quote.venue} onChange={(e) => update("venue", e.target.value)} placeholder="Oceanfront Estate" />
             </div>
             <div>
-              <Label className={labelCls}>Event Date</Label>
+              <Label className={labelCls} style={{ color: "var(--up-muted)" }}>Event Date</Label>
               <Input type="date" className={inputCls} value={quote.eventDate} onChange={(e) => update("eventDate", e.target.value)} />
             </div>
             <div>
-              <Label className={labelCls}>High-Ticket Tier</Label>
+              <Label className={labelCls} style={{ color: "var(--up-muted)" }}>High-Ticket Tier</Label>
               <Select value={quote.tier} onValueChange={(v) => update("tier", v as EventTier)}>
                 <SelectTrigger className={inputCls}>
                   <SelectValue />
                 </SelectTrigger>
-                <SelectContent className="bg-slate-900 border-amber-500/30 text-slate-100">
+                <SelectContent style={{ background: "var(--up-elevated)", borderColor: "var(--up-border)", color: "var(--up-white)" }}>
                   {Object.entries(TIER_BASE).map(([k, v]) => (
-                    <SelectItem key={k} value={k} className="focus:bg-amber-500/10 focus:text-amber-300">
+                    <SelectItem key={k} value={k}>
                       {v.label} — {fmt(v.base)} base
                     </SelectItem>
                   ))}
@@ -53,51 +52,57 @@ const LuxuryQuoteBuilder = () => {
         </div>
 
         {/* Fabrication & Logistics */}
-        <div className={cardCls}>
-          <h3 className="font-heading font-bold text-amber-400 mb-4">Custom Fabrication & Logistics</h3>
+        <div className="up-card p-6">
+          <h3 className="font-display text-xl mb-4" style={{ color: "var(--up-teal)" }}>CUSTOM FABRICATION & LOGISTICS</h3>
           <div className="grid sm:grid-cols-2 gap-4">
             <div>
-              <Label className={labelCls}>Fabrication Setup Hours</Label>
+              <Label className={labelCls} style={{ color: "var(--up-muted)" }}>Fabrication Setup Hours</Label>
               <Input type="number" min={0} className={inputCls} value={quote.fabricationHours} onChange={(e) => update("fabricationHours", +e.target.value)} />
             </div>
             <div>
-              <Label className={labelCls}>Fabrication Rate / hr</Label>
+              <Label className={labelCls} style={{ color: "var(--up-muted)" }}>Fabrication Rate / hr</Label>
               <Input type="number" min={0} className={inputCls} value={quote.fabricationRate} onChange={(e) => update("fabricationRate", +e.target.value)} />
             </div>
             <div>
-              <Label className={labelCls}>Transport Mileage (one-way)</Label>
+              <Label className={labelCls} style={{ color: "var(--up-muted)" }}>Transport Mileage (one-way)</Label>
               <Input type="number" min={0} className={inputCls} value={quote.mileage} onChange={(e) => update("mileage", +e.target.value)} />
             </div>
             <div>
-              <Label className={labelCls}>Mileage Multiplier ($/mi)</Label>
+              <Label className={labelCls} style={{ color: "var(--up-muted)" }}>Mileage Multiplier ($/mi)</Label>
               <Input type="number" step="0.1" min={0} className={inputCls} value={quote.mileageMultiplier} onChange={(e) => update("mileageMultiplier", +e.target.value)} />
             </div>
             <div>
-              <Label className={labelCls}>On-site Staff</Label>
+              <Label className={labelCls} style={{ color: "var(--up-muted)" }}>On-site Staff</Label>
               <Input type="number" min={0} className={inputCls} value={quote.staffCount} onChange={(e) => update("staffCount", +e.target.value)} />
             </div>
             <div>
-              <Label className={labelCls}>Overhead Cost</Label>
+              <Label className={labelCls} style={{ color: "var(--up-muted)" }}>Overhead Cost</Label>
               <Input type="number" min={0} className={inputCls} value={quote.overheadCost} onChange={(e) => update("overheadCost", +e.target.value)} />
             </div>
           </div>
         </div>
 
         {/* Premium Toggles */}
-        <div className={cardCls}>
-          <h3 className="font-heading font-bold text-amber-400 mb-4">Premium Add-Ons</h3>
+        <div className="up-card p-6">
+          <h3 className="font-display text-xl mb-4" style={{ color: "var(--up-teal)" }}>PREMIUM ADD-ONS</h3>
           <div className="space-y-4">
-            <div className="flex items-center justify-between rounded-lg border border-amber-500/10 bg-slate-950/60 p-4">
+            <div
+              className="flex items-center justify-between rounded-lg p-4"
+              style={{ background: "var(--up-elevated)", border: "1px solid var(--up-border)" }}
+            >
               <div>
-                <div className="font-semibold text-slate-100">Midnight Breakdown Fee</div>
-                <div className="text-xs text-slate-400">After-hours teardown surcharge (+$850)</div>
+                <div className="font-medium" style={{ color: "var(--up-white)" }}>Midnight Breakdown Fee</div>
+                <div className="text-xs" style={{ color: "var(--up-muted)" }}>After-hours teardown surcharge (+$850)</div>
               </div>
               <Switch checked={quote.midnightBreakdown} onCheckedChange={(v) => update("midnightBreakdown", v)} />
             </div>
-            <div className="flex items-center justify-between rounded-lg border border-amber-500/10 bg-slate-950/60 p-4">
+            <div
+              className="flex items-center justify-between rounded-lg p-4"
+              style={{ background: "var(--up-elevated)", border: "1px solid var(--up-border)" }}
+            >
               <div>
-                <div className="font-semibold text-slate-100">Weather Protection Package</div>
-                <div className="text-xs text-slate-400">Storm-rated anchoring + canopy backup (+$650)</div>
+                <div className="font-medium" style={{ color: "var(--up-white)" }}>Weather Protection Package</div>
+                <div className="text-xs" style={{ color: "var(--up-muted)" }}>Storm-rated anchoring + canopy backup (+$650)</div>
               </div>
               <Switch checked={quote.weatherProtection} onCheckedChange={(v) => update("weatherProtection", v)} />
             </div>
@@ -107,9 +112,9 @@ const LuxuryQuoteBuilder = () => {
 
       {/* Calculations sidebar */}
       <div className="space-y-4">
-        <div className="rounded-xl border border-amber-500/30 bg-gradient-to-br from-slate-900 to-slate-950 p-6 sticky top-6 shadow-[0_0_60px_-15px_rgba(245,158,11,0.25)]">
-          <h3 className="font-heading font-bold text-amber-400 mb-5 flex items-center gap-2">
-            <TrendingUp className="h-4 w-4" /> Pricing Summary
+        <div className="up-stat-card sticky top-20 p-6">
+          <h3 className="font-display text-xl mb-5 flex items-center gap-2" style={{ color: "var(--up-teal)" }}>
+            <TrendingUp className="h-4 w-4" /> PRICING SUMMARY
           </h3>
 
           <div className="space-y-2 text-sm">
@@ -120,7 +125,7 @@ const LuxuryQuoteBuilder = () => {
             {quote.weatherProtection && <Row label="Weather protection" value={fmt(calc.weatherFee)} />}
           </div>
 
-          <div className="border-t border-amber-500/20 my-4" />
+          <div className="my-4" style={{ borderTop: "1px solid var(--up-border)" }} />
 
           <div className="space-y-3">
             <Metric icon={<DollarSign className="h-4 w-4" />} label="Total Premium Pricing" value={fmt(calc.subtotal)} accent />
@@ -128,7 +133,7 @@ const LuxuryQuoteBuilder = () => {
             <Metric icon={<Percent className="h-4 w-4" />} label="High-Tier Margin" value={`${calc.margin.toFixed(1)}%`} />
           </div>
 
-          <p className="text-[11px] text-slate-500 mt-5 leading-relaxed">
+          <p className="text-[11px] mt-5 leading-relaxed font-mono-dm" style={{ color: "var(--up-muted)" }}>
             Calculations include staff burden, overhead, and 40% transport cost factor. Use the Premium Proposal tab to export.
           </p>
         </div>
@@ -138,19 +143,28 @@ const LuxuryQuoteBuilder = () => {
 };
 
 const Row = ({ label, value }: { label: string; value: string }) => (
-  <div className="flex justify-between text-slate-300">
+  <div className="flex justify-between" style={{ color: "var(--up-body)" }}>
     <span>{label}</span>
-    <span className="font-mono">{value}</span>
+    <span className="font-mono-dm" style={{ color: "var(--up-teal)" }}>{value}</span>
   </div>
 );
 
 const Metric = ({ icon, label, value, accent }: { icon: React.ReactNode; label: string; value: string; accent?: boolean }) => (
-  <div className={`flex items-center justify-between rounded-lg p-3 ${accent ? "bg-gradient-to-r from-amber-500/20 to-amber-600/10 border border-amber-500/40" : "bg-slate-950/60 border border-slate-800"}`}>
-    <div className="flex items-center gap-2 text-slate-300 text-xs uppercase tracking-wider">
-      <span className={accent ? "text-amber-400" : "text-slate-400"}>{icon}</span>
+  <div
+    className="flex items-center justify-between rounded-lg p-3"
+    style={
+      accent
+        ? { background: "var(--up-elevated)", border: "1px solid rgba(43,191,179,0.25)" }
+        : { background: "var(--up-elevated)", border: "1px solid var(--up-border)" }
+    }
+  >
+    <div className="flex items-center gap-2 font-mono-dm text-[11px] uppercase tracking-wider" style={{ color: "var(--up-muted)" }}>
+      <span style={{ color: accent ? "var(--up-orange)" : "var(--up-teal)" }}>{icon}</span>
       {label}
     </div>
-    <div className={`font-heading font-extrabold text-lg ${accent ? "text-amber-300" : "text-slate-100"}`}>{value}</div>
+    <div className="font-display text-xl" style={{ color: accent ? "var(--up-orange)" : "var(--up-teal)", letterSpacing: "0.04em" }}>
+      {value}
+    </div>
   </div>
 );
 

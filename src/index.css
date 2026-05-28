@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -143,3 +143,212 @@
   from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* ========================================
+   Upstream Pro Dashboard — Brand Re-skin
+   ======================================== */
+.upstream-dashboard {
+  --up-bg: #0a1628;
+  --up-surface: #0f1f38;
+  --up-card: #132240;
+  --up-elevated: #1a2d4f;
+  --up-border: #1e3560;
+  --up-teal: #2bbfb3;
+  --up-teal-dim: rgba(43, 191, 179, 0.12);
+  --up-orange: #f97316;
+  --up-yellow: #f5c518;
+  --up-body: #b8d4e8;
+  --up-muted: #5a7a9a;
+  --up-success: #22d3a5;
+  --up-error: #f87171;
+  --up-white: #f0f9ff;
+
+  background-color: var(--up-bg);
+  background-image:
+    radial-gradient(ellipse at 20% 20%, rgba(43, 191, 179, 0.04) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 80%, rgba(249, 115, 22, 0.03) 0%, transparent 60%);
+  color: var(--up-body);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  min-height: 100vh;
+}
+
+.upstream-dashboard h1,
+.upstream-dashboard h2,
+.upstream-dashboard h3,
+.upstream-dashboard h4,
+.upstream-dashboard h5,
+.upstream-dashboard h6,
+.upstream-dashboard .font-display {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--up-white);
+}
+
+.upstream-dashboard .font-mono-dm,
+.upstream-dashboard .font-mono {
+  font-family: 'DM Mono', monospace;
+}
+
+.upstream-dashboard .up-card {
+  background-color: var(--up-card);
+  border: 1px solid var(--up-border);
+  border-radius: 12px;
+  position: relative;
+  transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+.upstream-dashboard .up-card:hover {
+  border-color: rgba(43, 191, 179, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(43, 191, 179, 0.10);
+}
+
+.upstream-dashboard .up-stat-card {
+  background-color: var(--up-card);
+  border: 1px solid var(--up-border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+.upstream-dashboard .up-stat-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #2bbfb3, transparent);
+}
+.upstream-dashboard .up-stat-card:hover {
+  border-color: rgba(43, 191, 179, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(43, 191, 179, 0.08);
+}
+
+.upstream-dashboard .up-result-box {
+  background-color: var(--up-elevated);
+  border: 1px solid rgba(43, 191, 179, 0.25);
+  border-radius: 10px;
+  padding: 1rem;
+}
+.upstream-dashboard .up-result-label {
+  font-family: 'DM Mono', monospace;
+  color: var(--up-teal);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.upstream-dashboard .up-result-highlight {
+  font-family: 'Bebas Neue', sans-serif;
+  color: var(--up-orange);
+  font-size: 20px;
+  letter-spacing: 0.04em;
+}
+
+.upstream-dashboard .up-btn-primary {
+  background-color: var(--up-orange);
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: background-color .15s ease;
+}
+.upstream-dashboard .up-btn-primary:hover { background-color: #ea6b0f; }
+
+.upstream-dashboard .up-btn-secondary {
+  background-color: var(--up-teal);
+  color: var(--up-bg);
+  font-weight: 500;
+  border-radius: 8px;
+  transition: background-color .15s ease;
+}
+.upstream-dashboard .up-btn-secondary:hover { background-color: #25a89d; }
+
+.upstream-dashboard .up-btn-ghost {
+  background-color: transparent;
+  border: 1px solid var(--up-border);
+  color: var(--up-body);
+  border-radius: 8px;
+  transition: all .15s ease;
+}
+.upstream-dashboard .up-btn-ghost:hover {
+  border-color: var(--up-teal);
+  color: var(--up-teal);
+}
+
+.upstream-dashboard .up-input {
+  background-color: var(--up-elevated) !important;
+  border: 1px solid var(--up-border) !important;
+  color: var(--up-white) !important;
+  border-radius: 8px;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.upstream-dashboard .up-input:focus,
+.upstream-dashboard .up-input:focus-visible {
+  border-color: var(--up-teal) !important;
+  box-shadow: 0 0 0 3px rgba(43, 191, 179, 0.08) !important;
+  outline: none !important;
+}
+
+.upstream-dashboard .up-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.upstream-dashboard .up-badge-success { background: rgba(34,211,165,0.12); color: var(--up-success); }
+.upstream-dashboard .up-badge-primary { background: rgba(43,191,179,0.12); color: var(--up-teal); }
+.upstream-dashboard .up-badge-warning { background: rgba(245,197,24,0.12); color: var(--up-yellow); }
+.upstream-dashboard .up-badge-orange  { background: rgba(249,115,22,0.12); color: var(--up-orange); }
+.upstream-dashboard .up-badge-muted   { background: rgba(90,122,154,0.12); color: var(--up-muted); }
+
+.upstream-dashboard .up-topbar-title {
+  font-family: 'Bebas Neue', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--up-white);
+}
+
+/* Nav items */
+.upstream-dashboard .up-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.625rem 0.875rem;
+  border-left: 3px solid transparent;
+  color: var(--up-body);
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.08em;
+  font-size: 15px;
+  border-radius: 0 8px 8px 0;
+  transition: background-color .15s ease, color .15s ease, border-color .15s ease;
+  cursor: pointer;
+  width: 100%;
+  justify-content: flex-start;
+}
+.upstream-dashboard .up-nav-item:hover { color: var(--up-white); background: rgba(255,255,255,0.02); }
+.upstream-dashboard .up-nav-item[data-state="active"],
+.upstream-dashboard .up-nav-item.active {
+  border-left-color: var(--up-teal);
+  background: var(--up-teal-dim);
+  color: var(--up-teal);
+}
+
+/* Plan badge */
+.upstream-dashboard .up-plan-badge {
+  border-radius: 12px;
+  padding: 14px;
+  background:
+    linear-gradient(var(--up-surface), var(--up-surface)) padding-box,
+    linear-gradient(135deg, var(--up-teal), var(--up-orange)) border-box;
+  border: 1px solid transparent;
+}
+
+/* Table */
+.upstream-dashboard .up-table tbody tr:hover { background: rgba(43,191,179,0.03); }
+.upstream-dashboard .up-table .up-money { font-family: 'DM Mono', monospace; color: var(--up-teal); }
