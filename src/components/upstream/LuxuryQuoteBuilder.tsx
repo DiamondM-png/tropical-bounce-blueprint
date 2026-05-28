@@ -5,7 +5,7 @@ import { Switch } from "@/components/ui/switch";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { TrendingUp, DollarSign, Percent } from "lucide-react";
 
-const labelCls = "font-mono-dm text-[11px] uppercase tracking-wider";
+const labelCls = "font-mono-de text-[11px] uppercase tracking-wider";
 const inputCls = "up-input mt-1";
 
 const fmt = (n: number) =>
@@ -113,9 +113,9 @@ const LuxuryQuoteBuilder = () => {
       {/* Calculations sidebar */}
       <div className="space-y-4">
         <div className="up-stat-card sticky top-20 p-6">
-          <h3 className="font-display text-xl mb-5 flex items-center gap-2" style={{ color: "var(--up-teal)" }}>
+          <div className="font-display text-xl mb-5 flex items-center gap-2" style={{ color: "var(--up-teal)" }}>
             <TrendingUp className="h-4 w-4" /> PRICING SUMMARY
-          </h3>
+          </div>
 
           <div className="space-y-2 text-sm">
             <Row label={`${TIER_BASE[quote.tier].label} base`} value={fmt(calc.tierBase)} />
@@ -128,12 +128,12 @@ const LuxuryQuoteBuilder = () => {
           <div className="my-4" style={{ borderTop: "1px solid var(--up-border)" }} />
 
           <div className="space-y-3">
-            <Metric icon={<DollarSign className="h-4 w-4" />} label="Total Premium Pricing" value={fmt(calc.subtotal)} accent />
-            <Metric icon={<TrendingUp className="h-4 w-4" />} label="Net Profit" value={fmt(calc.netProfit)} />
-            <Metric icon={<Percent className="h-4 w-4" />} label="High-Tier Margin" value={`${calc.margin.toFixed(1)}%`} />
+            <Metric icon={DollarSign} label="Total Premium Pricing" value={fmt(calc.subtotal)} accent />
+            <Metric icon={TrendingUp} label="Net Profit" value={fmt(calc.netProfit)} />
+            <Metric icon={Percent} label="High-Tier Margin" value={`${calc.margin.toFixed(1)}%`} />
           </div>
 
-          <p className="text-[11px] mt-5 leading-relaxed font-mono-dm" style={{ color: "var(--up-muted)" }}>
+          <p className="text-[11px] mt-5 leading-relaxed font-mono-de" style={{ color: "var(--up-muted)" }}>
             Calculations include staff burden, overhead, and 40% transport cost factor. Use the Premium Proposal tab to export.
           </p>
         </div>
@@ -145,7 +145,7 @@ const LuxuryQuoteBuilder = () => {
 const Row = ({ label, value }: { label: string; value: string }) => (
   <div className="flex justify-between" style={{ color: "var(--up-body)" }}>
     <span>{label}</span>
-    <span className="font-mono-dm" style={{ color: "var(--up-teal)" }}>{value}</span>
+    <span className="font-mono-de" style={{ color: "var(--up-teal)" }}>{value}</span>
   </div>
 );
 
@@ -158,7 +158,7 @@ const Metric = ({ icon, label, value, accent }: { icon: React.ReactNode; label: 
         : { background: "var(--up-elevated)", border: "1px solid var(--up-border)" }
     }
   >
-    <div className="flex items-center gap-2 font-mono-dm text-[11px] uppercase tracking-wider" style={{ color: "var(--up-muted)" }}>
+    <div className="flex items-center gap-2 font-mono-de text-[11px] uppercase tracking-wider" style={{ color: "var(--up-muted)" }}>
       <span style={{ color: accent ? "var(--up-orange)" : "var(--up-teal)" }}>{icon}</span>
       {label}
     </div>
