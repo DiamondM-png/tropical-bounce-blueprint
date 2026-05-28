@@ -14,7 +14,7 @@ const PremiumProposalGenerator = () => {
   const lines = [
     { desc: `${tierLabel} — Premium Event Package`, amt: calc.tierBase },
     { desc: `Custom Fabrication & Setup (${quote.fabricationHours} hrs @ ${fmt(quote.fabricationRate)})`, amt: calc.fabrication },
-    { desc: `White-Glove Transport (${quote.mileage} mi × 2 @ $${quote.mileageMultiplier}/mi)`, amt: calc.transport },
+    { desc: `White-Glove Transport (${quote.mileage} mi x 2 @ $${quote.mileageMultiplier}/mi)`, amt: calc.transport },
     ...(quote.midnightBreakdown ? [{ desc: "Midnight Breakdown Service", amt: calc.midnightFee }] : []),
     ...(quote.weatherProtection ? [{ desc: "Weather Protection Package", amt: calc.weatherFee }] : []),
   ];
@@ -33,21 +33,21 @@ const PremiumProposalGenerator = () => {
           <div>
             <div className="flex items-center gap-2 mb-2">
               <Crown className="h-6 w-6" style={{ color: "#2bbfb3" }} />
-              <span className="font-heading font-extrabold tracking-widest text-sm" style={{ color: "#1a9e93" }}>UPSTREAM PRO</span>
+              <span className="font-heading font-extrabold text-sm" style={{ color: "#1a9e93" }}>UPSTREAM PRO</span>
             </div>
             <h1 className="font-heading font-extrabold text-3xl text-slate-900">Premium Event Proposal</h1>
             <p className="text-slate-500 text-sm mt-1">tropicalbounce.com — Upstream Pro</p>
           </div>
           <div className="text-right text-sm">
             <div className="text-slate-500 uppercase tracking-wider text-xs">Proposal #</div>
-            <div className="font-mono font-bold text-slate-900">{`UH-${Date.now().toString().slice(-6)}`}</div>
+            <div className="font-mono text-slate-700">{`UH-${Date.now().toString().slice(-6)}`}</div>
             <div className="text-slate-500 uppercase tracking-wider text-xs mt-2">Issued</div>
             <div className="font-mono text-slate-700">{new Date().toLocaleDateString()}</div>
           </div>
         </div>
 
         {/* Client */}
-        <div className="grid sm:grid-cols-2 gap-6 mt-8">
+        <div className="grid se:grid-cols-2 gap-6 mt-8">
           <div>
             <div className="text-xs uppercase tracking-wider text-slate-500 mb-1">Prepared For</div>
             <div className="font-heading font-bold text-lg text-slate-900">{quote.clientName || "—"}</div>
@@ -55,8 +55,8 @@ const PremiumProposalGenerator = () => {
           </div>
           <div className="sm:text-right">
             <div className="text-xs uppercase tracking-wider text-slate-500 mb-1">Event Tier</div>
-            <div className="font-heading font-bold text-lg text-[#1a9e93]">{tierLabel}</div>
-            <div className="text-slate-600 text-sm">{quote.eventDate ? new Date(quote.eventDate).toLocaleDateString(undefined, { weekday: "long", year: "numeric", month: "long", day: "numeric" }) : "Date TBD"}</div>
+            <div className="font-heading font-bold text-lg" style={{ color: "#1a9e93" }}>{tierLabel}</div>
+            <div className="text-slate-600 text-sm">{quote.eventDate ? new Date(quote.eventDate).toLocaleDateString(undefined, { weekday: "long", year: "numeric", month: "long", day: "numeric" }) : "—"}</div>
           </div>
         </div>
 
@@ -79,13 +79,13 @@ const PremiumProposalGenerator = () => {
           <tfoot>
             <tr>
               <td className="pt-6 text-right text-slate-600 uppercase text-xs tracking-wider">Total Investment</td>
-              <td className="pt-6 text-right font-heading font-extrabold text-3xl text-[#1a9e93]">{fmt(calc.subtotal)}</td>
+              <td className="pt-6 text-right font-heading font-extrabold text-3xl" style={{ color: "#1a9e93" }}>{fmt(calc.subtotal)}</td>
             </tr>
           </tfoot>
         </table>
 
         {/* Terms */}
-        <div className="mt-12 grid sm:grid-cols-2 gap-8 text-sm">
+        <div className="mt-12 grid se:grid-cols-2 gap-8 text-sm">
           <div>
             <div className="font-heading font-bold text-slate-900 mb-2">Inclusions</div>
             <ul className="list-disc list-inside text-slate-600 space-y-1">
