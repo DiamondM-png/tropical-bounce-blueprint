@@ -21,7 +21,7 @@ const Navbar = () => {
         <a href="#" className="flex items-center gap-2">
           <Palmtree className="h-7 w-7 text-primary" />
           <span className="font-heading font-extrabold text-xl text-foreground">
-            Inflatable <span className="text-secondary">Enterprise Manual</span>
+            Tropical<span className="text-secondary">Bounce.com</span>
           </span>
         </a>
 
@@ -46,7 +46,9 @@ const Navbar = () => {
           {user ? (
             <>
               <Button variant="ghost" size="sm" asChild className="gap-1.5">
-                <Link to="/account"><UserCircle className="h-4 w-4" /> Account</Link>
+                <Link to="/account">
+                  <UserCircle className="h-4 w-4" /> Account
+                </Link>
               </Button>
               <Button variant="ghost" size="sm" onClick={signOut} className="gap-1.5">
                 <LogOut className="h-4 w-4" /> Sign out
@@ -88,16 +90,30 @@ const Navbar = () => {
           </Link>
           {user ? (
             <>
-              <Link to="/account" onClick={() => setOpen(false)} className="block text-sm font-heading font-semibold text-foreground">
+              <Link
+                to="/account"
+                onClick={() => setOpen(false)}
+                className="block text-sm font-heading font-semibold text-foreground"
+              >
                 Account
               </Link>
-              <Button variant="ghost" size="sm" onClick={() => { signOut(); setOpen(false); }} className="w-full mt-2">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => {
+                  signOut();
+                  setOpen(false);
+                }}
+                className="w-full mt-2"
+              >
                 Sign out
               </Button>
             </>
           ) : (
             <Button variant="cta" size="sm" className="w-full mt-2" asChild>
-              <Link to="/auth" onClick={() => setOpen(false)}>Sign in</Link>
+              <Link to="/auth" onClick={() => setOpen(false)}>
+                Sign in
+              </Link>
             </Button>
           )}
         </div>
