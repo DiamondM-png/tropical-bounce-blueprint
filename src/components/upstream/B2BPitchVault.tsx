@@ -133,20 +133,20 @@ const B2BPitchVault = () => {
         const done = s.steps.filter((st) => checks[st.id]).length;
         const pct = Math.round((done / s.steps.length) * 100);
         return (
-          <div key={s.id} className="rounded-xl border border-amber-500/20 bg-slate-900/60 backdrop-blur p-6 flex flex-col">
-            <div className="flex items-center gap-2 text-amber-400 mb-1">
+          <div key={s.id} className="up-card p-6 flex flex-col">
+            <div className="flex items-center gap-2 mb-1" style={{ color: "var(--up-teal)" }}>
               {s.icon}
-              <h3 className="font-heading font-bold text-lg text-slate-100">{s.audience}</h3>
+              <h3 className="font-display text-lg" style={{ color: "var(--up-white)" }}>{s.audience.toUpperCase()}</h3>
             </div>
-            <p className="text-sm text-slate-400 mb-4">{s.blurb}</p>
+            <p className="text-sm mb-4" style={{ color: "var(--up-body)" }}>{s.blurb}</p>
 
             <div className="mb-3">
-              <div className="flex justify-between text-[11px] uppercase tracking-wider text-slate-500 mb-1">
+              <div className="flex justify-between text-[11px] uppercase tracking-wider mb-1 font-mono-dm" style={{ color: "var(--up-muted)" }}>
                 <span>Outreach progress</span>
-                <span className="text-amber-400">{pct}%</span>
+                <span style={{ color: "var(--up-teal)" }}>{pct}%</span>
               </div>
-              <div className="h-1.5 bg-slate-800 rounded-full overflow-hidden">
-                <div className="h-full bg-gradient-to-r from-amber-400 to-amber-600 transition-all" style={{ width: `${pct}%` }} />
+              <div className="h-1.5 rounded-full overflow-hidden" style={{ background: "var(--up-elevated)" }}>
+                <div className="h-full transition-all" style={{ width: `${pct}%`, background: "linear-gradient(90deg, #2bbfb3, #f97316)" }} />
               </div>
             </div>
 
@@ -157,9 +157,16 @@ const B2BPitchVault = () => {
                     id={st.id}
                     checked={!!checks[st.id]}
                     onCheckedChange={() => toggle(st.id)}
-                    className="border-amber-500/40 data-[state=checked]:bg-amber-500 data-[state=checked]:border-amber-500 mt-0.5"
+                    className="mt-0.5 data-[state=checked]:bg-[#2bbfb3] data-[state=checked]:border-[#2bbfb3] border-[#1e3560]"
                   />
-                  <label htmlFor={st.id} className={`text-sm cursor-pointer ${checks[st.id] ? "text-slate-500 line-through" : "text-slate-200"}`}>
+                  <label
+                    htmlFor={st.id}
+                    className="text-sm cursor-pointer"
+                    style={{
+                      color: checks[st.id] ? "var(--up-muted)" : "var(--up-body)",
+                      textDecoration: checks[st.id] ? "line-through" : "none",
+                    }}
+                  >
                     {st.label}
                   </label>
                 </li>
@@ -167,13 +174,12 @@ const B2BPitchVault = () => {
             </ul>
 
             <div className="mt-auto">
-              <div className="rounded-lg bg-slate-950 border border-amber-500/10 p-4 text-xs text-slate-300 font-mono whitespace-pre-wrap max-h-48 overflow-y-auto leading-relaxed">
+              <div className="up-result-box text-xs font-mono-dm whitespace-pre-wrap max-h-48 overflow-y-auto leading-relaxed" style={{ color: "var(--up-body)" }}>
                 {s.template}
               </div>
               <Button
                 onClick={() => copy(s.id, s.template)}
-                variant="outline"
-                className="w-full mt-3 border-amber-500/40 bg-transparent text-amber-300 hover:bg-amber-500/10 hover:text-amber-200 gap-2"
+                className="w-full mt-3 up-btn-ghost gap-2"
               >
                 {copied === s.id ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
                 {copied === s.id ? "Copied" : "Copy template"}
