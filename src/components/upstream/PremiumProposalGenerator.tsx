@@ -35,15 +35,9 @@ const PremiumProposalGenerator = () => {
               <Crown className="h-6 w-6" style={{ color: "#2bbfb3" }} />
               <span className="font-heading font-extrabold tracking-widest text-sm" style={{ color: "#1a9e93" }}>UPSTREAM PRO</span>
             </div>
-
-      <div id="proposal-sheet" className="bg-white text-slate-900 rounded-xl shadow-2xl mx-auto max-w-4xl p-10 md:p-14 print:shadow-none print:rounded-none print:max-w-none print:p-12">
-        {/* Header */}
-        <div className="flex items-start justify-between border-b-4 border-amber-500 pb-6">
-          <div>
-            <div className="flex items-center gap-2 mb-2">
-              <Crown className="h-6 w-6 text-amber-600" />
-              <span className="font-heading font-extrabold text-amber-700 tracking-widest text-sm">UPSTREAM HUB</span>
-            </div>
+            <h1 className="font-heading font-extrabold text-3xl text-slate-900">Premium Event Proposal</h1>
+            <p className="text-slate-500 text-sm mt-1">tropicalbounce.com — Upstream Pro</p>
+          </div>
             <h1 className="font-heading font-extrabold text-3xl text-slate-900">Premium Event Proposal</h1>
             <p className="text-slate-500 text-sm mt-1">tropicalbounce.com — Luxury Division</p>
           </div>
