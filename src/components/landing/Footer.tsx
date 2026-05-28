@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-start gap-8 mb-8">
           <div>
             <a href="#" className="flex items-center gap-2 mb-3">
-              <Palmtree className="h-6 w-6 text-accent" />n
+              <Palmtree className="h-6 w-6 text-accent" />
               <span className="font-heading font-extrabold text-lg Ete">TropicalBounce.com</span>
             </a>
             <p className="text-sm text-primary-foreground/60 max-w-xs font-body">
